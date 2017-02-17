@@ -26,14 +26,17 @@ public partial class Registre : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        //llegirFitxer();
-        omplirDataRegistre();
         if (!IsPostBack)
         {
+            
             amagarPanels();
             PanelInici.Visible = true;
             LinkButtonEnrrere.Visible = false;
             contPanel = 0;
+            OmplirAny();
+            omplirDataRegistre(31, false);
+
+
         }
     }
 
@@ -42,7 +45,7 @@ public partial class Registre : System.Web.UI.Page
         if (FileUpload1.HasFile)
         {
             string extension = System.IO.Path.GetExtension(FileUpload1.FileName);
-            if(extension == ".jpg" || extension == ".png")
+            if (extension == ".jpg" || extension == ".png")
             {
                 string path = Server.MapPath("ImatgesPujades\\");
 
@@ -50,7 +53,7 @@ public partial class Registre : System.Web.UI.Page
 
                 FileUpload1.SaveAs(path + imageName);
                 //mostrarProves.Text = path;
-                ImagePerfil.ImageUrl = "~/ImatgesPujades/"+imageName;
+                ImagePerfil.ImageUrl = "~/ImatgesPujades/" + imageName;
             }
         }
         else
@@ -75,7 +78,7 @@ public partial class Registre : System.Web.UI.Page
                 PanelBenvinguda.Visible = true;
                 PanelDadesNecessaries.Visible = false;
                 PanelDadesPersonals.Visible = false;
-                PanelOpcionsRelacio.Visible = false;           
+                PanelOpcionsRelacio.Visible = false;
                 break;
             case 2:
                 PanelInici.Visible = false;
@@ -106,9 +109,78 @@ public partial class Registre : System.Web.UI.Page
         }
     }
 
+    protected string SeleccioSexe()
+    {
+        String sex = "";
+        if (RadioButtonSocHome.Checked)
+        {
+            sex = "Man";
+            return sex;
+        }
+        if (RadioButtonSocDona.Checked)
+        {
+            sex = "Woman";
+            return sex;
+        }
+        if (RadioButtonSocNeutre.Checked)
+        {
+            sex = "Neutral";
+            return sex;
+        }
+        return sex;
+    }
+
+    protected string SeleccioSexeBuscat()
+    {
+        String sex = "";
+        if (RadioButtonBuscoHome.Checked)
+        {
+            sex = "Man";
+            return sex;
+        }
+        if (RadioButtonBuscoDona.Checked)
+        {
+            sex = "Woman";
+            return sex;
+        }
+        if (RadioButtonBuscoNeutre.Checked)
+        {
+            sex = "Neutral";
+            return sex;
+        }
+        return sex;
+    }
+
+    protected string SeleccioFills()
+    {
+        string children = "";
+
+        if (RadiobuttonFillsSi.Checked)
+        {
+            children = "Si";
+            return children;
+        }
+        if (RadiobuttonFillsNo.Checked)
+        {
+            children = "No";
+            return children;
+        }
+        else
+        {
+            children = "";
+            return children;
+        }
+    }
+
+    protected string getBirthDate()
+    {
+        string date = DropDia.SelectedItem.Text + "/" + DropMes.SelectedItem.Text + "/" + DropAny.SelectedItem.Text;
+        return date;
+    }
+
     protected void LinkButtonContinuar_Click(object sender, EventArgs e)
     {
-        if (TextBoxContra.Text.Length < 5 && contPanel==0)
+        if (TextBoxContra.Text.Length < 5 && contPanel==0 )
         {
             ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "La contrasenya ha de contenir 5 caràcters com a mínim!" + "');", true);
         }
@@ -117,12 +189,12 @@ public partial class Registre : System.Web.UI.Page
             contPanel++;
             seleccionarPanel(contPanel);
             comprovarEnrrere();
-        }       
+        }
     }
 
     protected void comprovarEnrrere()
     {
-        if(contPanel == 0)
+        if (contPanel == 0)
         {
             LinkButtonEnrrere.Visible = false;
         }
@@ -136,31 +208,24 @@ public partial class Registre : System.Web.UI.Page
     {
         Usuari user = new Usuari();
 
-        user.name = TextBoxCognoms.Text + ", " +TextBoxNom.Text ;
+        user.name = TextBoxCognoms.Text + ", " + TextBoxNom.Text;
         user.img = "";
-        user.iv = "";
+        user.iv = UtilSignUp.selectedIndexesOfCheckBoxList(CheckboxlistIV);
         user.mail = TextBoxCorreu.Text;
         user.pw = TextBoxContra.Text;
         user.religion = "";
-        if (RadiobuttonBuscarFillsSi.Checked)
-        {
-            user.children = "Si";
-        }
-        else
-        {
-            user.children = "No";
-        }
-
-        user.sex = "Falta omplir";
-        user.shape = DropdownlistBuscarFigura.SelectedItem.Text;
-        user.sports = DropdownlistBuscarEsports.SelectedItem.Text;
-        user.tastes = "Falta omplir";
+        user.children = SeleccioFills();
+        user.sex = SeleccioSexe();
+        user.sexWanted = SeleccioSexeBuscat();
+        user.shape = DropdownlistFigura.SelectedItem.Text;
+        user.sports = DropdownlistEsports.SelectedItem.Text;
+        user.tastes = UtilSignUp.selectedIndexesOfCheckBoxList(CheckListGustos);
         user.typeOfHair = DropdownlistCabell.SelectedItem.Text;
         user.ubication = "Falta omplir";
         user.colour = DropdownlistColor.SelectedItem.Text;
         user.civilstatus = DropdownlistCivil.SelectedItem.Text;
         user.birthplace = DropdownlistOrigen.SelectedItem.Text;
-        user.birthdate = "";
+        user.birthdate = getBirthDate();
 
         FMong.preUpload(user);
         LabelFi.Text = "Benvingut a TODATE";
@@ -173,30 +238,61 @@ public partial class Registre : System.Web.UI.Page
         comprovarEnrrere();
     }
 
-    protected void llegirFitxer()
-    {
-        int counter = 0;
-        string line;
-        
-        StreamReader file = new StreamReader(".\\Altres\\Documents\\gentilicios.txt");
-        while ((line = file.ReadLine()) != null)
-        {
-            DropdownlistOrigen.Items.Add(line);
-            counter++;
-        }
 
-        file.Close();
-    }
-    protected void omplirDataRegistre()
+
+    protected void omplirDataRegistre( int days, bool feb)
     {
-        for(int cont = 1; cont <= 31; cont++)
+
+        if (DateTime.IsLeapYear(Int32.Parse(DropAny.SelectedItem.Text)) && feb)
         {
-            DropDia.Items.Add(cont.ToString());
+            for (int cont = 1; cont <= 29; cont++)
+            {
+                DropDia.Items.Add(cont.ToString());
+            }
         }
+        else
+        {
+            for (int cont = 1; cont <= days; cont++)
+            {
+                DropDia.Items.Add(cont.ToString());
+            }
+        }
+    }
+
+    protected void OmplirAny()
+    {
         int anyActual = DateTime.Now.Year;
-        for (int cont = anyActual; cont>anyActual-100;cont--)
+        for (int cont = anyActual; cont > anyActual - 100; cont--)
         {
             DropAny.Items.Add(cont.ToString());
         }
+    }
+
+    protected void DropMes_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        int days =31;
+        bool feb = false;
+
+        if (DropMes.SelectedIndex == 0 || DropMes.SelectedIndex == 2 
+            || DropMes.SelectedIndex == 4 || DropMes.SelectedIndex == 6 
+            || DropMes.SelectedIndex == 7 || DropMes.SelectedIndex == 9 
+            || DropMes.SelectedIndex == 11)
+        {
+            days = 31;
+            feb = false;
+        }
+        if (DropMes.SelectedIndex == 3 || DropMes.SelectedIndex == 5 
+            || DropMes.SelectedIndex == 8 || DropMes.SelectedIndex == 10)
+        {
+            days = 30;
+            feb = false;
+        }
+
+        if (DropMes.SelectedIndex == 1)
+        {
+            days = 28;
+            feb = true;
+        }
+        omplirDataRegistre(days, feb);
     }
 }
