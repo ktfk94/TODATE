@@ -18,14 +18,14 @@ public class Usuari
     public string colour;
     public string typeOfHair;
     public string shape;
-    public string tastes;
+    public string[] tastes;
     public string sports;
     public string birthplace;
     public string ubication;
     public string religion;
     public string civilstatus;
     public string children;
-    public string iv;
+    public string [] iv;
 
     public Usuari() {}
        

@@ -45,33 +45,40 @@ public class FMong
         new Task(Insert).Start();
 
     }
+    
 
    static protected async void Insert()
     {
 
         _client = new MongoClient();
         _database = _client.GetDatabase("prova");
-
+        var gustos = new BsonArray();
+        string tast = UtilSignUp.formArray(user.tastes);
+        string iv = UtilSignUp.formArray(user.iv);
+        
+        /*gustos.Add(new BsonDocument{  //Codi per a posar un array dintre del document
+            {"tastes", tast}
+        });*/
         var document = new BsonDocument
             {
                 { "name",  user.name},
-                //{ "birthdate",user.birthdate },
+                { "birthdate", user.birthdate},
                 //{ "img", "Blank"},
-                //{ "sex", user.sex },
-                //{ "sexWanted", user.sexWanted },
+                { "sex", user.sex },
+                { "sexWanted", user.sexWanted },
                 { "mail", user.mail },
                 { "pw", user.pw },
                 { "colour", user.colour },
                 { "typeOfHair", user.typeOfHair },
                 { "shape", user.shape},
-                //{ "tastes", "blank" },
-                //{ "sports", user.sports },
+                { "tastes", tast },
+                { "sports", user.sports },
                 //{ "birthplace", user.birthplace },
                 //{ "ubication", "blank" },
-                { "religion", user.religion },
+                //{ "religion", user.religion },
                 { "civil status", user.civilstatus },
-                //{ "children", user.children },
-                //{ "iv", user.iv },
+                { "children", user.children },
+                { "iv", iv },
             };
 
         var collection = _database.GetCollection<BsonDocument>("Usuaris");
