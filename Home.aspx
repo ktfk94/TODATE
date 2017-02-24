@@ -12,7 +12,9 @@
     </div>
     <div class ="col-sm-offset-4 col-sm-6">
         <img class="img-responsive" src="Imatges/Sin título.png" alt="" />
+
     </div>
+    
   
 </asp:Content>
 
