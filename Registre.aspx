@@ -36,7 +36,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <asp:image id="ImageSocDona" cssclass="imgRegistre"  runat="server" imageurl="~/Imatges/simbol_dona.png" ToolTip="Soc dona"></asp:image>
-                                    <asp:radiobutton id="RadioButtonSocDOna" runat="server" GroupName="Soc"></asp:radiobutton>
+                                    <asp:radiobutton id="RadioButtonSocDona" runat="server" GroupName="Soc"></asp:radiobutton>
                                 </div>
                                 <div class="col-md-4">
                                     <asp:image id="ImageSocNeutre" cssclass="imgRegistre"  runat="server" imageurl="~/Imatges/simbolNeutre.jpg" ToolTip="Indefinit"></asp:image>
@@ -245,7 +245,7 @@
                     <asp:ListItem>Tennis</asp:ListItem>
                     <asp:ListItem>Natació</asp:ListItem>
                     <asp:ListItem>Golf</asp:ListItem>
-                    <asp:ListItem>Balonmano</asp:ListItem>
+                    <asp:ListItem>Handbol</asp:ListItem>
                 </asp:dropdownlist>
             </div>
             <div class="form-group">
@@ -261,6 +261,7 @@
                     <asp:ListItem>No creient</asp:ListItem>
                     <asp:ListItem>Catòlic</asp:ListItem>
                     <asp:ListItem>Budisme</asp:ListItem>
+                    <asp:ListItem>Musulmà</asp:ListItem>
                 </asp:dropdownlist>
             </div>
             <div class="form-group">
@@ -410,11 +411,11 @@
             <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-6">
-                            <asp:linkbutton id="LinkButtonEnrrere" runat="server" OnClick="LinkButtonEnrrere_Click">Enrrere</asp:linkbutton>
+                            <asp:linkbutton id="LinkButtonEnrrere" runat="server" OnClick="LinkButtonEnrrere_Click" CausesValidation="False">Enrrere</asp:linkbutton>
                         </div>
-                        <div class="col-md-6 butoContinuarRegistre">
+                        <div class="col-md-6" id="butoContinuarRegistre">
                             <asp:Label ID="LabelFi" CssClass="label label-warning" runat="server" Text=""></asp:Label>
-                            <asp:linkbutton id="LinkButtonContinuar"  runat="server" OnClick="LinkButtonContinuar_Click">Continuar</asp:linkbutton>
+                            <asp:linkbutton id="LinkButtonContinuar"   runat="server" OnClick="LinkButtonContinuar_Click">Continuar</asp:linkbutton>
                         </div>
                     </div>
             </div>
