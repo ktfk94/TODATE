@@ -20,12 +20,12 @@
                 <asp:Label ID="LabelDadesContra" CssClass="col-sm-2 control-label" runat="server" Text="Contrasenya"></asp:Label>
                 <div class="col-sm-10">
                     <asp:TextBox ID="TextBoxDadesContra" CssClass="form-control" runat="server" TextMode="Password"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidatorDadesContra" CssClass="alert-danger label-danger label" runat="server" 
+<%--                    <asp:RequiredFieldValidator ID="RequiredFieldValidatorDadesContra" CssClass="alert-danger label-danger label" runat="server" 
                         ErrorMessage="La contrasenya és necessaria!" ControlToValidate="TextBoxDadesContra" Display="Dynamic"></asp:RequiredFieldValidator>
-                </div>
+               --%> </div>
             </div>
             <div class="form-group" id="buttonIniciSessio">
-                <asp:LinkButton ID="LinkButtonAcceptar" CssClass="btn btn-primary" runat="server">
+                <asp:LinkButton ID="LinkButtonAcceptar" CssClass="btn btn-primary" runat="server" OnClick="LinkButtonAcceptar_Click">
                     <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Acceptar
                 </asp:LinkButton>
                 <asp:Label ID="LabelRecuperar" CssClass="label label-warning" runat="server" Text="Has oblidat la contrasenya?"></asp:Label>

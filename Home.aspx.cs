@@ -16,9 +16,11 @@ public partial class Home : System.Web.UI.Page
     {
         //Button1.PostBackUrl = "Registre.aspx";
     }
+
     protected void LinkButtonAcceptar_Click(object sender, EventArgs e)
     {
 
     }
+
 
 }
