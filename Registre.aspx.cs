@@ -299,4 +299,9 @@ public partial class Registre : System.Web.UI.Page
         }
         omplirDataRegistre(days, feb);
     }
+
+    protected void LinkButtonAcceptar_Click(object sender, EventArgs e)
+    {
+
+    }
 }

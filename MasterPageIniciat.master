@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="PagMestre.master.cs" Inherits="PagMestre" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPageIniciat.master.cs" Inherits="MasterPageIniciat" %>
 
 <!DOCTYPE html>
 
@@ -11,7 +11,7 @@
     <script src="Scripts/bootstrap.min.js"></script>
     <link href="Estils/ElMeuEstil.css" rel="stylesheet" />
 
-    <asp:ContentPlaceHolder ID="head" runat="server">
+    <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
@@ -38,8 +38,8 @@
                     <li><a href="Home.aspx">TODATE</a></li>
                 </ul>
                 <ul class="nav navbar-nav  navbar-right">
-                    <li><a data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span>&nbsp Iniciar Sessió</a></li>
-                    <li><a href="Registre.aspx"><span class="glyphicon glyphicon-user"></span>Registre</a></li>
+                    <li><a data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span>&nbsp Tancar Sessió</a></li>
+                    <li><a href="Registre.aspx"><span class="glyphicon glyphicon-user"></span>Perfil</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -67,6 +67,5 @@
             <h4 class="text-center copyright">© Copyright Todate 2017</h4>
         </div>
     </footer>
-
 </body>
 </html>
