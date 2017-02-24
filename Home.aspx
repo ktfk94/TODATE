@@ -12,7 +12,9 @@
     </div>
     <div class ="col-sm-offset-4 col-sm-6">
         <img class="img-responsive" src="Imatges/Sin título.png" alt="" />
+
     </div>
+
     <!--INICI MODAL-->
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
@@ -51,6 +53,8 @@
             </div>
         </div>
     <!--FI MODAL-->
+
+   
   
 </asp:Content>
 

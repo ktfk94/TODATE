@@ -11,4 +11,18 @@ public partial class PaginaPrincipal : System.Web.UI.Page
     {
 
     }
+
+    protected void LinkButtonAcceptar_Click(object sender, EventArgs e)
+    {
+        string pw = "";
+        pw =  TextBoxDadesContra.Text;
+        string compro = Encrypt.Encriptar(pw, "hola");
+
+        bool comp =  FMong.preUploadSelect(TextBoxDadesNom.Text);
+        if (comp)
+        {
+            LinkButtonAcceptar.Text = compro;
+        }
+        
+    }
 }
