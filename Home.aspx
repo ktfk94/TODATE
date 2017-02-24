@@ -13,6 +13,44 @@
     <div class ="col-sm-offset-4 col-sm-6">
         <img class="img-responsive" src="Imatges/Sin título.png" alt="" />
     </div>
+    <!--INICI MODAL-->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                Modal content
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Inicia Sessió</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <asp:Label ID="LabelDadesNom" CssClass="col-sm-2 control-label" runat="server" Text="Usuari"></asp:Label>
+                            <div class="col-sm-10">
+                                <asp:TextBox ID="TextBoxDadesNom" CssClass="form-control" runat="server"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <asp:Label ID="LabelDadesContrasenya" CssClass="col-sm-2 control-label" runat="server" Text="Contrasenya"></asp:Label>
+                            <div class="col-sm-10">
+                                <asp:TextBox ID="TextBoxDadesContra" CssClass="form-control" runat="server" TextMode="Password"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div class="form-group" id="buttonIniciSessio">
+                            <asp:Label ID="LabelRecuperar" CssClass="label label-warning" runat="server" Text="Has oblidat la contrasenya?"></asp:Label><br />
+                            <asp:Label ID="Label1" CssClass="label label-danger" runat="server" Text="Aqui va per codi si el nom i contrasenya son correctes"></asp:Label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <asp:LinkButton ID="LinkButtonAcceptar" CssClass="btn btn-primary" runat="server" OnClick="LinkButtonAcceptar_Click">
+                            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Acceptar
+                        </asp:LinkButton>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    <!--FI MODAL-->
   
 </asp:Content>
 

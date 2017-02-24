@@ -81,8 +81,7 @@ footer {
 .titol {
     color: #000000;
 }
-.imatge_fons {
-    width:50%;
-    height:50%;
-    position:relative;
+.navbar-brand>img {
+    display: block;
+    max-width: 80px;
 }
