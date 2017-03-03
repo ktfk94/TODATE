@@ -78,8 +78,8 @@ public class FMong
         _client = new MongoClient();
         _database = _client.GetDatabase("prova");
         var gustos = new BsonArray();
-        string tast = UtilSignUp.formArray(user.tastes);
-        string iv = UtilSignUp.formArray(user.iv);
+        string tast = Utils.formArray(user.tastes);
+        string iv = Utils.formArray(user.iv);
         
         /*gustos.Add(new BsonDocument{  //Codi per a posar un array dintre del document
             {"tastes", tast}

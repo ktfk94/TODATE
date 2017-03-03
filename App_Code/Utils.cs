@@ -4,14 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 /// <summary>
-/// Summary description for UtilSignUp
+/// Summary description for Utils
 /// </summary>
-public class UtilSignUp
+public class Utils
 {
-    public UtilSignUp()
+    public Utils()
     {
         //
         // TODO: Add constructor logic here
@@ -70,5 +71,38 @@ public class UtilSignUp
             }
         }
         return concat;
+    }
+
+    static public HtmlGenericControl afegirXat(String ruta, String nom, String msg, String horaMsg)
+    {
+        HtmlGenericControl nouDiv = new HtmlGenericControl("DIV");
+        nouDiv.Attributes.Add("class", "row table-bordered");
+
+        HtmlGenericControl divImg = new HtmlGenericControl("DIV");
+        divImg.Attributes.Add("class", "col-md-2");
+        HtmlGenericControl img = new HtmlGenericControl("IMG");
+        img.Attributes.Add("class", "img-rounded img-responsive imatgeXats");
+        img.Attributes.Add("src", ruta);
+        divImg.Controls.Add(img);
+        nouDiv.Controls.Add(divImg);
+
+        HtmlGenericControl divText = new HtmlGenericControl("DIV");
+        divText.Attributes.Add("class", "col-md-9");
+        HtmlGenericControl h3 = new HtmlGenericControl("H3");
+        h3.InnerHtml = nom;
+        HtmlGenericControl text = new HtmlGenericControl("ASP:LABEL");
+        text.Attributes.Add("class", "control-label");
+        text.InnerHtml = msg;
+        divText.Controls.Add(h3);
+        divText.Controls.Add(text);
+        nouDiv.Controls.Add(divText);
+
+        HtmlGenericControl divHora = new HtmlGenericControl("DIV");
+        divHora.Attributes.Add("class", "col-md-1");
+        HtmlGenericControl hora = new HtmlGenericControl("ASP:LABEL");
+        hora.InnerHtml = horaMsg;
+        nouDiv.Controls.Add(hora);
+
+        return nouDiv;
     }
 }
