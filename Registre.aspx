@@ -356,7 +356,7 @@
                 <asp:RadioButton ID="RadiobuttonBuscarFillsNo" runat="server" GroupName="BuscoFills" Text="No"></asp:RadioButton>
             </div>
             <div class="form-group">
-                <asp:Label ID="LabelFumador" CssClass="col-sm-2 control-label" runat="server" Text="Que sigui fumador?"></asp:Label>
+                <asp:Label ID="LabelFumador" CssClass="col-sm-2 control-label" runat="server" Text="T'importa que sigui fumador?"></asp:Label>
                 <asp:RadioButton ID="RadiobuttonBuscoFumarSi" runat="server" GroupName="BuscoFumador" Text="Si"></asp:RadioButton>
                 <asp:RadioButton ID="RadiobuttonBuscoFumarNo" runat="server" GroupName="BuscoFumador" Text="No"></asp:RadioButton>
             </div>
