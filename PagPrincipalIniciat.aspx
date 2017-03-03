@@ -11,7 +11,8 @@
         <div id="cercador">
             <asp:Label ID="LabelCercador" CssClass="col-sm-1 control-label" runat="server" Text="Label">Cercador</asp:Label>
             <div class="col-sm-11">
-                <asp:TextBox ID="TextBoxCercador" CssClass="form-control" PlaceHolder="A qui busques?" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TextBoxCercador" CssClass="form-control" PlaceHolder="A qui busques?" runat="server" 
+                    OnTextChanged="TextBoxCercador_TextChanged"></asp:TextBox>
             </div>
         </div>
         <div class="panel-body blocXats">
@@ -60,7 +61,7 @@
                     </div>
                 </div>
                 <div id="espaiPubli" class="container-fluid table-bordered col-md-4">
-                    <asp:Button ID="ButtonProva" runat="server" Text="Button" OnClick="ButtonProva_Click" />
+                    <asp:Button ID="ButtonProva" runat="server" Text="Button" OnClick="ButtonProva_Click" CausesValidation="False" />
                 </div>
             </div>
         </div>

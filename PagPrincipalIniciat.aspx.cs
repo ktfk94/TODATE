@@ -15,34 +15,18 @@ public partial class PagPrincipalIniciat : System.Web.UI.Page
 
     protected void ButtonProva_Click(object sender, EventArgs e)
     {
-        HtmlGenericControl nouDiv = new HtmlGenericControl("DIV");
-        nouDiv.Attributes.Add("class","row table-bordered");
+        String ruta = "./Imatges/fons.jpg";
+        String nom = "Nom de la persona";
+        String msg = "Missatge més recent de la persona";
+        String hora = DateTime.Now.ToString();
 
-        HtmlGenericControl divImg = new HtmlGenericControl("DIV");
-        divImg.Attributes.Add("class", "col-md-2");
-        HtmlGenericControl img = new HtmlGenericControl("IMG");
-        img.Attributes.Add("class", "img-rounded img-responsive imatgeXats");
-        img.Attributes.Add("src","./Imatges/fons.jpg");
-        divImg.Controls.Add(img);
-        nouDiv.Controls.Add(divImg);
-
-        HtmlGenericControl divText = new HtmlGenericControl("DIV");
-        divText.Attributes.Add("class", "col-md-9");
-        HtmlGenericControl h3 = new HtmlGenericControl("H3");
-        h3.InnerHtml = "Nom de la persona";
-        HtmlGenericControl text = new HtmlGenericControl("ASP:LABEL");
-        text.Attributes.Add("class", "control-label");
-        text.InnerHtml = "Missatge més recent de la persona";
-        divText.Controls.Add(h3);
-        divText.Controls.Add(text);
-        nouDiv.Controls.Add(divText);
-
-        HtmlGenericControl divHora = new HtmlGenericControl("DIV");
-        divHora.Attributes.Add("class", "col-md-1");
-        HtmlGenericControl hora = new HtmlGenericControl("ASP:LABEL");
-        hora.InnerHtml = "12:09";
-        nouDiv.Controls.Add(hora);
+        HtmlGenericControl nouDiv = Utils.afegirXat(ruta, nom, msg, hora);
 
         espaiXats.Controls.Add(nouDiv);
+    }
+
+    protected void TextBoxCercador_TextChanged(object sender, EventArgs e)
+    {
+        
     }
 }
