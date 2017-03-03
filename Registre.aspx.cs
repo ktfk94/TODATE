@@ -12,7 +12,10 @@ public partial class Registre : System.Web.UI.Page
     static int qui = 0;
     static int que = 0;
     static int contPanel = 0;
+    static string tipo = "";
     static string guid = Guid.NewGuid().ToString();
+    static Usuari user = new Usuari();
+    string pwEncrypt = "Encrypt123ºº";
     protected void amagarPanels()
     {
         PanelBarraProgres.Visible = false;
@@ -74,6 +77,7 @@ public partial class Registre : System.Web.UI.Page
                 PanelOpcionsRelacio.Visible = false;
                 break;
             case 1:
+                user.pw = Encrypt.Encriptar(TextBoxContra.Text, pwEncrypt);
                 PanelInici.Visible = false;
                 PanelBenvinguda.Visible = true;
                 PanelDadesNecessaries.Visible = false;
@@ -206,13 +210,13 @@ public partial class Registre : System.Web.UI.Page
 
     protected void InsertReg()
     {
-        Usuari user = new Usuari();
+        tipo = "Insert";
+        
 
         user.name = TextBoxCognoms.Text + ", " + TextBoxNom.Text;
         user.img = "";
         user.iv = Utils.selectedIndexesOfCheckBoxList(CheckboxlistIV);
         user.mail = TextBoxCorreu.Text;
-        user.pw = TextBoxContra.Text;
         user.religion = "";
         user.children = SeleccioFills();
         user.sex = SeleccioSexe();
@@ -227,7 +231,7 @@ public partial class Registre : System.Web.UI.Page
         user.birthplace = DropdownlistOrigen.SelectedItem.Text;
         user.birthdate = getBirthDate();
 
-        FMong.preUpload(user);
+        FMong.preUpload(user, tipo);
         LabelFi.Text = "Benvingut a TODATE";
     }
 
@@ -294,5 +298,10 @@ public partial class Registre : System.Web.UI.Page
             feb = true;
         }
         omplirDataRegistre(days, feb);
+    }
+
+    protected void LinkButtonAcceptar_Click(object sender, EventArgs e)
+    {
+
     }
 }

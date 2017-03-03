@@ -1,4 +1,4 @@
-﻿body {
+body {
     padding-top: 80px;
     padding-bottom:200px;
     /*padding-left: 20px;*/
@@ -91,4 +91,8 @@ footer {
 }
 .blocXats{
     text-align:center;
+}
+.navbar-brand>img {
+    display: block;
+    max-width: 80px;
 }

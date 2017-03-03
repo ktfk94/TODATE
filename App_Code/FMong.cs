@@ -1,5 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Driver;
+
+using MongoDB.Driver.Builders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,16 +40,39 @@ public class FMong
     //    var collection = DB.GetCollection<BsonDocument>("store");
     //}
 
-    static public void preUpload(Usuari usuarioR)
+    static public void preUpload(Usuari usuarioR, string tipo)
     {
         user = usuarioR;
 
-        new Task(Insert).Start();
+        if (tipo=="Insert")
+        {
+            new Task(Insert).Start();
+        }
+
+        if (tipo == "Select")
+        {
+            //new Task(Select).Start();
+        }
+        
 
     }
-    
 
-   static protected async void Insert()
+    static public bool preUploadSelect(string correu)
+    {
+        
+        bool comp = false;
+
+
+
+            comp = Select(correu);
+
+        
+
+        return comp;
+    }
+
+
+    static protected async void Insert()
     {
 
         _client = new MongoClient();
@@ -83,5 +108,46 @@ public class FMong
 
         var collection = _database.GetCollection<BsonDocument>("Usuaris");
         await collection.InsertOneAsync(document);
+    }
+
+    static protected bool Select(string correu)
+    {
+
+        //_client = new MongoClient();
+        //database = _client.GetDatabase("prova");
+        var client = new MongoClient("mongodb://localhost");
+        var coll = client.GetServer().GetDatabase("prova").GetCollection("Usuaris");
+
+
+        /*gustos.Add(new BsonDocument{  //Codi per a posar un array dintre del document
+            {"tastes", tast}
+        });*/
+        //var collection = _database.GetCollection<BsonDocument>("Usuaris");
+        //var filter = Builders<BsonDocument>.Filter.Eq("name", user.name);
+        //var count = 0;
+        //var batch = new BsonDocument();
+        //using (var cursor = await collection.FindAsync(filter))
+        //{
+        //    while (await cursor.MoveNextAsync())
+        //    {
+        //         batch= cursor.Current;
+        //        foreach (var document in batch)
+        //        {
+        //            // process document
+        //            count++;
+        //        }
+        //    }
+        //}
+
+        var query = Query.EQ("mail", correu);
+        var doc2 = coll.FindOne(query);
+        var value = doc2["mail"];
+        bool comp = false;
+
+        if (value.AsString == correu)
+        {
+            comp = true;
+        }
+        return comp;
     }
 }
