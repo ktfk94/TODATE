@@ -16,14 +16,13 @@
         </div>
         <div class="panel-body blocXats">
             <div class="row">
-                <div id="espaiXats" class="container-fluid table-bordered col-md-8">
+                <div id="espaiXats" class="container-fluid table-bordered col-md-8" runat="server">
                     <div class="row table-bordered">
                         <div class="col-md-2">
                             <img class="img-rounded img-responsive imatgeXats" alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/" />
                         </div>
                         <div class="col-md-9">
-                            <h3>Persona de prova
-                            </h3>
+                            <h3>Persona de prova</h3>
                             <asp:Label ID="LabelMissatge" runat="server" CssClass="control-label"
                                 Text="Label">Hola q tal em dic persona de prova i m'interesses :D</asp:Label>
                         </div>
@@ -61,6 +60,7 @@
                     </div>
                 </div>
                 <div id="espaiPubli" class="container-fluid table-bordered col-md-4">
+                    <asp:Button ID="ButtonProva" runat="server" Text="Button" OnClick="ButtonProva_Click" />
                 </div>
             </div>
         </div>
