@@ -215,7 +215,7 @@ public partial class Registre : System.Web.UI.Page
 
         user.name = TextBoxCognoms.Text + ", " + TextBoxNom.Text;
         user.img = "";
-        user.iv = UtilSignUp.selectedIndexesOfCheckBoxList(CheckboxlistIV);
+        user.iv = Utils.selectedIndexesOfCheckBoxList(CheckboxlistIV);
         user.mail = TextBoxCorreu.Text;
         user.religion = "";
         user.children = SeleccioFills();
@@ -223,7 +223,7 @@ public partial class Registre : System.Web.UI.Page
         user.sexWanted = SeleccioSexeBuscat();
         user.shape = DropdownlistFigura.SelectedItem.Text;
         user.sports = DropdownlistEsports.SelectedItem.Text;
-        user.tastes = UtilSignUp.selectedIndexesOfCheckBoxList(CheckListGustos);
+        user.tastes = Utils.selectedIndexesOfCheckBoxList(CheckListGustos);
         user.typeOfHair = DropdownlistCabell.SelectedItem.Text;
         user.ubication = "Falta omplir";
         user.colour = DropdownlistColor.SelectedItem.Text;
