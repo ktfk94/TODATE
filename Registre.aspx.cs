@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 public partial class Registre : System.Web.UI.Page
@@ -30,16 +31,13 @@ public partial class Registre : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
-        {
-            
+        {            
             amagarPanels();
             PanelInici.Visible = true;
             LinkButtonEnrrere.Visible = false;
             contPanel = 0;
             OmplirAny();
             omplirDataRegistre(31, false);
-
-
         }
     }
 
@@ -47,7 +45,7 @@ public partial class Registre : System.Web.UI.Page
     {
         if (FileUpload1.HasFile)
         {
-            string extension = System.IO.Path.GetExtension(FileUpload1.FileName);
+            string extension = Path.GetExtension(FileUpload1.FileName);
             if (extension == ".jpg" || extension == ".png")
             {
                 string path = Server.MapPath("ImatgesPujades\\");
@@ -221,14 +219,14 @@ public partial class Registre : System.Web.UI.Page
         user.children = SeleccioFills();
         user.sex = SeleccioSexe();
         user.sexWanted = SeleccioSexeBuscat();
-        user.shape = DropdownlistFigura.SelectedItem.Text;
-        user.sports = DropdownlistEsports.SelectedItem.Text;
+        user.shape = TextBoxFigura.Text;
+        user.sports = TextBoxEsports.Text;
         user.tastes = Utils.selectedIndexesOfCheckBoxList(CheckListGustos);
-        user.typeOfHair = DropdownlistCabell.SelectedItem.Text;
+        user.typeOfHair = TextBoxCabell.Text;
         user.ubication = "Falta omplir";
         user.colour = DropdownlistColor.SelectedItem.Text;
-        user.civilstatus = DropdownlistCivil.SelectedItem.Text;
-        user.birthplace = DropdownlistOrigen.SelectedItem.Text;
+        user.civilstatus = TextBoxCivil.Text;
+        user.birthplace = TextBoxOrigen.Text;
         user.birthdate = getBirthDate();
 
         FMong.preUpload(user, tipo);
@@ -303,5 +301,31 @@ public partial class Registre : System.Web.UI.Page
     protected void LinkButtonAcceptar_Click(object sender, EventArgs e)
     {
 
+    }
+
+    protected void ButtonAfegirGust_Click(object sender, EventArgs e)
+    {
+        ListItem item = new ListItem();
+        item.Text = TextBoxAfegirGust.Text;
+
+        if(item.Text!=null && item.Text != "") {
+            CheckListGustos.Items.Add(item);
+        }
+        
+
+        TextBoxAfegirGust.Text = "";
+    }
+
+    protected void ButtonIV_Click(object sender, EventArgs e)
+    {
+        ListItem item = new ListItem();
+        item.Text = TextBoxIV.Text;
+
+        if (item.Text != null && item.Text != "")
+        {
+            CheckboxlistIV.Items.Add(item);
+        }
+
+        TextBoxIV.Text = "";
     }
 }

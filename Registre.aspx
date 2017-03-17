@@ -196,24 +196,16 @@
             </div>
             <div class="form-group">
                 <asp:Label ID="LabelCabell" CssClass="col-sm-2 control-label" runat="server" Text="Tipus de cabell"></asp:Label>
-                <asp:DropDownList ID="DropdownlistCabell" runat="server">
-                    <asp:ListItem>-</asp:ListItem>
-                    <asp:ListItem>Llis</asp:ListItem>
-                    <asp:ListItem>Ondulat</asp:ListItem>
-                    <asp:ListItem>Arrissat</asp:ListItem>
-                </asp:DropDownList>
+                <asp:textbox id="TextBoxCabell" runat="server"></asp:textbox>
             </div>
             <div class="form-group">
                 <asp:Label ID="LabelFigura" CssClass="col-sm-2 control-label" runat="server" Text="Figura"></asp:Label>
-                <asp:DropDownList ID="DropdownlistFigura" runat="server">
-                    <asp:ListItem>-</asp:ListItem>
-                    <asp:ListItem>Esvelta</asp:ListItem>
-                    <asp:ListItem>Corpulenta</asp:ListItem>
-
-                </asp:DropDownList>
+                <asp:textbox id="TextBoxFigura" runat="server"></asp:textbox>
             </div>
             <div class="form-group">
                 <asp:Label ID="LabelGustos" CssClass="col-sm-2 control-label" runat="server" Text="Gustos"></asp:Label>
+                <asp:textbox id="TextBoxAfegirGust" runat="server"></asp:textbox>
+                <asp:button id="ButtonAfegirGust" runat="server" text="Afegir" OnClick="ButtonAfegirGust_Click" CausesValidation="False" />
                 <asp:CheckBoxList ID="CheckListGustos" runat="server" CellPadding="1" CellSpacing="1" RepeatColumns="9" BorderStyle="Solid" BorderWidth="1px">
                     <asp:ListItem>Caminar</asp:ListItem>
                     <asp:ListItem>Musica</asp:ListItem>
@@ -237,39 +229,19 @@
             </div>
             <div class="form-group">
                 <asp:Label ID="LabelEsports" CssClass="col-sm-2 control-label" runat="server" Text="Esports"></asp:Label>
-                <asp:DropDownList ID="DropdownlistEsports" runat="server">
-                    <asp:ListItem>-</asp:ListItem>
-                    <asp:ListItem>No faig esport</asp:ListItem>
-                    <asp:ListItem>Bàsquet</asp:ListItem>
-                    <asp:ListItem>Fútbol</asp:ListItem>
-                    <asp:ListItem>Tennis</asp:ListItem>
-                    <asp:ListItem>Natació</asp:ListItem>
-                    <asp:ListItem>Golf</asp:ListItem>
-                    <asp:ListItem>Handbol</asp:ListItem>
-                </asp:DropDownList>
+                <asp:textbox id="TextBoxEsports" runat="server"></asp:textbox>
             </div>
             <div class="form-group">
                 <asp:Label ID="LabelOrigen" CssClass="col-sm-2 control-label" runat="server" Text="Origen"></asp:Label>
-                <asp:DropDownList ID="DropdownlistOrigen" runat="server">
-                    <asp:ListItem>-</asp:ListItem>
-                </asp:DropDownList>
+                <asp:textbox id="TextBoxOrigen" runat="server"></asp:textbox>
             </div>
             <div class="form-group">
                 <asp:Label ID="LabelReligio" CssClass="col-sm-2 control-label" runat="server" Text="Religió"></asp:Label>
-                <asp:DropDownList ID="DropdownlistReligió" runat="server">
-                    <asp:ListItem>-</asp:ListItem>
-                    <asp:ListItem>No creient</asp:ListItem>
-                    <asp:ListItem>Catòlic</asp:ListItem>
-                    <asp:ListItem>Budisme</asp:ListItem>
-                    <asp:ListItem>Musulmà</asp:ListItem>
-                </asp:DropDownList>
+                <asp:textbox id="TextBoxReligio" runat="server"></asp:textbox>
             </div>
             <div class="form-group">
                 <asp:Label ID="LabelCivil" CssClass="col-sm-2 control-label" runat="server" Text="Estat civil"></asp:Label>
-                <asp:DropDownList ID="DropdownlistCivil" runat="server">
-                    <asp:ListItem>-</asp:ListItem>
-                    <asp:ListItem>Solter/a</asp:ListItem>
-                </asp:DropDownList>
+                <asp:textbox id="TextBoxCivil" runat="server"></asp:textbox>
             </div>
             <div class="form-group">
                 <asp:Label ID="LabelFills" CssClass="col-sm-2 control-label" runat="server" Text="Tens fills?"></asp:Label>
@@ -283,6 +255,8 @@
             </div>
             <div class="form-group">
                 <asp:Label ID="LabelIV" CssClass="col-sm-2 control-label" runat="server" Text="Imperfeccions i virtuts"></asp:Label>
+                <asp:textbox id="TextBoxIV" runat="server"></asp:textbox>
+                <asp:button id="ButtonIV" runat="server" text="Afegir" OnClick="ButtonIV_Click" CausesValidation="False" />
                 <asp:CheckBoxList ID="CheckboxlistIV" runat="server" CellPadding="1" CellSpacing="1" RepeatColumns="9" BorderStyle="Solid" BorderWidth="1px">
                     <asp:ListItem>Alegre</asp:ListItem>
                     <asp:ListItem>Enèrgic</asp:ListItem>
