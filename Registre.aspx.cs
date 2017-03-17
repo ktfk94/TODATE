@@ -1,4 +1,5 @@
-﻿using System;
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -215,21 +216,21 @@ public partial class Registre : System.Web.UI.Page
 
         user.name = TextBoxCognoms.Text + ", " + TextBoxNom.Text;
         user.img = "";
-        user.iv = UtilSignUp.selectedIndexesOfCheckBoxList(CheckboxlistIV);
+        user.iv = Utils.selectedIndexesOfCheckBoxList(CheckboxlistIV);
         user.mail = TextBoxCorreu.Text;
         user.religion = "";
         user.children = SeleccioFills();
-        user.sex = Encrypt.Encriptar(SeleccioSexe(), pwEncrypt);
+        user.sex = SeleccioSexe();
         user.sexWanted = SeleccioSexeBuscat();
-        user.shape = DropdownlistFigura.SelectedItem.Text;
-        user.sports = DropdownlistEsports.SelectedItem.Text;
-        user.tastes = UtilSignUp.selectedIndexesOfCheckBoxList(CheckListGustos);
-        user.typeOfHair = DropdownlistCabell.SelectedItem.Text;
+        user.shape = TextBoxFigura.Text;
+        user.sports = TextBoxEsports.Text;
+        user.tastes = Utils.selectedIndexesOfCheckBoxList(CheckListGustos);
+        user.typeOfHair = TextBoxCabell.Text;
         user.ubication = "Falta omplir";
         user.colour = DropdownlistColor.SelectedItem.Text;
-        user.civilstatus = Encrypt.Encriptar(DropdownlistCivil.SelectedItem.Text, pwEncrypt); 
-        user.birthplace = Encrypt.Encriptar(DropdownlistOrigen.SelectedItem.Text, pwEncrypt);
-        user.birthdate = Encrypt.Encriptar(getBirthDate(), pwEncrypt);
+        user.civilstatus = TextBoxCivil.Text;
+        user.birthplace = TextBoxOrigen.Text;
+        user.birthdate = getBirthDate();
 
         FMong.preUpload(user, tipo);
         LabelFi.Text = "Benvingut a TODATE";
@@ -313,6 +314,29 @@ public partial class Registre : System.Web.UI.Page
         }
         
     }
+    protected void ButtonAfegirGust_Click(object sender, EventArgs e)
+    {
+        ListItem item = new ListItem();
+        item.Text = TextBoxAfegirGust.Text;
 
+        if(item.Text!=null && item.Text != "") {
+            CheckListGustos.Items.Add(item);
+        }
+        
 
+        TextBoxAfegirGust.Text = "";
+    }
+
+    protected void ButtonIV_Click(object sender, EventArgs e)
+    {
+        ListItem item = new ListItem();
+        item.Text = TextBoxIV.Text;
+
+        if (item.Text != null && item.Text != "")
+        {
+            CheckboxlistIV.Items.Add(item);
+        }
+
+        TextBoxIV.Text = "";
+    }
 }
