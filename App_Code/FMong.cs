@@ -145,7 +145,7 @@ public class FMong
         bool comp = false;
         if (valueMail != null && valuePw != null)
         {
-            if (valueMail.AsString == correu && valuePw.AsString == pw)
+            if (valueMail.AsString == correu && Encrypt.Desencriptar(valuePw.AsString, "") == pw)
             {
                 comp = true;
             }

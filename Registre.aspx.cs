@@ -15,7 +15,7 @@ public partial class Registre : System.Web.UI.Page
     static string tipo = "";
     static string guid = Guid.NewGuid().ToString();
     static Usuari user = new Usuari();
-    string pwEncrypt = "Encrypt123ºº";
+    string pwEncrypt = "";
     protected void amagarPanels()
     {
         PanelBarraProgres.Visible = false;
