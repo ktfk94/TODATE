@@ -27,9 +27,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand col-sm-2" href="#">
-                    <img id="imgLogo" class="img img-responsive" src="imatges/logo.PNG" alt="" />
-                    <a id="TitolMaster" href="Home.aspx">TODATE</a>
+                <a class="navbar-brand" href="#">
+                    <img id="imgLogo" src="imatges/logo.PNG" alt="" />
                 </a>
 
             </div>

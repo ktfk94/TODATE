@@ -14,19 +14,17 @@
                     </div>
                     <div class="col-md-3">
                         <div class="col-md-10">
-                            <p>Nom: Ona akbar</p>
-                            <p>Edat: 42</p>
-                            <p>Data registre: getDate()</p>
-                            <p>Correu electrònic: a@a.com</p>
-                            <br />
+                             <asp:Label ID="LabelNom" runat="server" Text="Nom: "></asp:Label>
+                             <asp:Label ID="LabelEdat" runat="server" Text="Edat: "></asp:Label>
+                             <asp:Label ID="LabelData" runat="server" Text="Data de Registre: "></asp:Label>
+                             <asp:Label ID="LabelCorreu" runat="server" Text="Correu: "></asp:Label>
                         </div>
 
                         <div class="col-md-10">
                             <ul class="list-group">
                                 <li class="list-group-item active">Gustos</li>
-                                <li class="list-group-item">Videojocs</li>
-                                <li class="list-group-item">Programar</li>
-                                <li class="list-group-item">Veure sèreis</li>
+                                <li id="liGustos"class="list-group-item"></li>
+    
                             </ul>
                         </div>
                     </div>
@@ -49,7 +47,7 @@
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <asp:Button ID="ButtonCanviarDades" runat="server" Text="CanviarDades" />
+                        <asp:Button ID="ButtonCanviarDades" runat="server" Text="CanviarDades" OnClick="ButtonCanviarDades_Click" />
                     </div>
                 </div>
             </div>

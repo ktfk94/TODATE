@@ -1,0 +1,87 @@
+﻿body {
+    padding-top: 80px;
+    padding-bottom:200px;
+    /*padding-left: 20px;*/
+    padding-right: 20px;
+  
+}
+
+.navbar-fixed-top .navbar-brand {
+    padding: 15px 0;
+}
+
+#buttonIniciSessio {
+    text-align: center;
+}
+
+#butoContinuarRegistre{
+    text-align: right;
+}
+
+.imgRegistre {
+    max-height: 50px;
+    max-width: 50px;
+}
+.pujarImgPerfil{
+    max-height: 300px;
+    max-width: 300px;
+}
+
+.benvingudaText {
+    text-align: center;
+    max-width: 500px;
+}
+
+.form-group-pers{
+    margin-bottom: 15px !important;
+    padding-top: 10px !important;
+}
+
+.navbar-fixed-top .nav {
+    padding: 15px 0;
+}
+
+.navbar-fixed-top .navbar-brand {
+    padding: 0 15px;
+}
+
+footer {
+    padding-top: 12px;
+    position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
+    background-color: #000000;
+}
+
+.buto {
+    font-size: 40px;
+    background-color: #D87939;
+    color: #000000;
+    border-color: none;
+    border-radius: 5px;
+    margin-top: 10%;
+}
+
+    .buto:hover {
+        color: #D87939;
+        background-color: #ffffff;
+        border-color: #D87939;
+        border-radius: 5px;
+    }
+
+.wrapper {
+    text-align: center;
+}
+
+.copyright {
+    color: #ffffff;
+}
+
+.titol {
+    color: #000000;
+}
+.navbar-brand>img {
+    display: block;
+    max-width: 80px;
+}
