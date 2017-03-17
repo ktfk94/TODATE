@@ -26,17 +26,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">
-                    <img id="imgLogo" src="imatges/logo.PNG" alt="" />
+                <a class="navbar-brand col-sm-2" href="#">
+                    <img id="imgLogo" class="img img-responsive" src="imatges/logo.PNG" alt="" />
+                    <a href="Home.aspx">TODATE</a>
                 </a>
-
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="nav navbar-nav">
-                    <li><a href="Home.aspx">TODATE</a></li>
-                </ul>
+            <div class="collapse navbar-collapse" id="menu">                
                 <ul class="nav navbar-nav  navbar-right">
                     <li><a data-toggle="modal" data-target="#ModalLogIn"><span class="glyphicon glyphicon-log-in"></span>&nbsp Iniciar Sessió</a></li>
                     <li><a href="Registre.aspx"><span class="glyphicon glyphicon-user"></span>Registre</a></li>
