@@ -60,7 +60,7 @@ public class FMong
     static public bool preUploadSelect(string correu, string pw)
     {
         bool comp = false;
-        comp = Select(correu, pw);
+        comp = SelectLogIn(correu, pw);
         return comp;
     }
 
@@ -103,7 +103,7 @@ public class FMong
         await collection.InsertOneAsync(document);
     }
 
-    static protected bool Select(string correu, string pw)
+    static protected bool SelectLogIn(string correu, string pw)
     {
 
         //_client = new MongoClient();
@@ -153,5 +153,42 @@ public class FMong
 
 
         return comp;
+    }
+
+
+    static public Usuari SelectUser(String correu )
+    {
+        
+        //_client = new MongoClient();
+        //database = _client.GetDatabase("prova");
+        var client = new MongoClient("mongodb://localhost");
+        var coll = client.GetServer().GetDatabase("prova").GetCollection("Usuaris");
+
+        var query = Query.EQ("mail", correu);
+        var doc2 = coll.FindOne(query);
+
+        MongoDB.Bson.BsonValue valueName = null;
+        MongoDB.Bson.BsonValue valueBirth = null;
+        MongoDB.Bson.BsonValue valueMail = null;
+        if (doc2 != null)
+        {
+            valueName = doc2["name"];
+            valueMail = doc2["mail"];
+            valueBirth = doc2["birthdate"];
+        }
+
+        bool comp = false;
+        if (valueMail != null && valueName != null)
+        {
+            if (valueMail.AsString == correu)
+            {
+                user.name = valueName.AsString;
+                user.mail = valueMail.AsString;
+                user.birthdate = valueBirth.AsString;
+            }
+        }
+
+
+        return user;
     }
 }
