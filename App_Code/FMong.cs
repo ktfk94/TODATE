@@ -16,7 +16,7 @@ public class FMong
 
     protected static IMongoClient _client;
     protected static IMongoDatabase _database;
-     static Usuari user = new Usuari();
+    static Usuari user = new Usuari();
 
     public FMong()
     {
@@ -44,7 +44,7 @@ public class FMong
     {
         user = usuarioR;
 
-        if (tipo=="Insert")
+        if (tipo == "Insert")
         {
             new Task(Insert).Start();
         }
@@ -53,21 +53,14 @@ public class FMong
         {
             //new Task(Select).Start();
         }
-        
+
 
     }
 
-    static public bool preUploadSelect(string correu)
+    static public bool preUploadSelect(string correu, string pw)
     {
-        
         bool comp = false;
-
-
-
-            comp = Select(correu);
-
-        
-
+        comp = Select(correu, pw);
         return comp;
     }
 
@@ -78,9 +71,9 @@ public class FMong
         _client = new MongoClient();
         _database = _client.GetDatabase("prova");
         var gustos = new BsonArray();
-        string tast = Utils.formArray(user.tastes);
-        string iv = Utils.formArray(user.iv);
-        
+        string tast = UtilSignUp.formArray(user.tastes);
+        string iv = UtilSignUp.formArray(user.iv);
+
         /*gustos.Add(new BsonDocument{  //Codi per a posar un array dintre del document
             {"tastes", tast}
         });*/
@@ -110,7 +103,7 @@ public class FMong
         await collection.InsertOneAsync(document);
     }
 
-    static protected bool Select(string correu)
+    static protected bool Select(string correu, string pw)
     {
 
         //_client = new MongoClient();
@@ -141,13 +134,24 @@ public class FMong
 
         var query = Query.EQ("mail", correu);
         var doc2 = coll.FindOne(query);
-        var value = doc2["mail"];
-        bool comp = false;
-
-        if (value.AsString == correu)
+        MongoDB.Bson.BsonValue valueMail = null;
+        MongoDB.Bson.BsonValue valuePw = null;
+        if (doc2 != null)
         {
-            comp = true;
+            valueMail = doc2["mail"];
+            valuePw = doc2["pw"];
         }
+
+        bool comp = false;
+        if (valueMail != null && valuePw != null)
+        {
+            if (valueMail.AsString == correu && valuePw.AsString == pw)
+            {
+                comp = true;
+            }
+        }
+
+
         return comp;
     }
 }

@@ -215,21 +215,21 @@ public partial class Registre : System.Web.UI.Page
 
         user.name = TextBoxCognoms.Text + ", " + TextBoxNom.Text;
         user.img = "";
-        user.iv = Utils.selectedIndexesOfCheckBoxList(CheckboxlistIV);
+        user.iv = UtilSignUp.selectedIndexesOfCheckBoxList(CheckboxlistIV);
         user.mail = TextBoxCorreu.Text;
         user.religion = "";
         user.children = SeleccioFills();
-        user.sex = SeleccioSexe();
+        user.sex = Encrypt.Encriptar(SeleccioSexe(), pwEncrypt);
         user.sexWanted = SeleccioSexeBuscat();
         user.shape = DropdownlistFigura.SelectedItem.Text;
         user.sports = DropdownlistEsports.SelectedItem.Text;
-        user.tastes = Utils.selectedIndexesOfCheckBoxList(CheckListGustos);
+        user.tastes = UtilSignUp.selectedIndexesOfCheckBoxList(CheckListGustos);
         user.typeOfHair = DropdownlistCabell.SelectedItem.Text;
         user.ubication = "Falta omplir";
         user.colour = DropdownlistColor.SelectedItem.Text;
-        user.civilstatus = DropdownlistCivil.SelectedItem.Text;
-        user.birthplace = DropdownlistOrigen.SelectedItem.Text;
-        user.birthdate = getBirthDate();
+        user.civilstatus = Encrypt.Encriptar(DropdownlistCivil.SelectedItem.Text, pwEncrypt); 
+        user.birthplace = Encrypt.Encriptar(DropdownlistOrigen.SelectedItem.Text, pwEncrypt);
+        user.birthdate = Encrypt.Encriptar(getBirthDate(), pwEncrypt);
 
         FMong.preUpload(user, tipo);
         LabelFi.Text = "Benvingut a TODATE";
@@ -298,10 +298,21 @@ public partial class Registre : System.Web.UI.Page
             feb = true;
         }
         omplirDataRegistre(days, feb);
+        
     }
 
     protected void LinkButtonAcceptar_Click(object sender, EventArgs e)
     {
-
+       if(FMong.preUploadSelect(TextBoxDadesNom.Text, TextBoxDadesContra.Text))
+        {
+            //codi per anar a la seguent pagina
+        }
+        else
+        {
+            LabelError.Visible = true;
+        }
+        
     }
+
+
 }
