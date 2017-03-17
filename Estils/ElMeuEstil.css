@@ -37,6 +37,10 @@ body {
     padding-top: 10px !important;
 }
 
+.navbar-fixed-top .nav {
+    padding: 15px 0;
+}
+
 .navbar-fixed-top .navbar-brand {
     padding: 0 15px;
 }
@@ -89,6 +93,11 @@ footer {
 .blocXats{
     text-align:center;
 }
-#ImageNavPerfil{
-    max-height: 50px !important;
+
+#imgLogo{}
+
+.navbar-brand>img {
+    display: block;
+
+    max-width: 80px;
 }
