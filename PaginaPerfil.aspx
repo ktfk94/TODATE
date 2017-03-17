@@ -14,8 +14,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="col-md-10">
-                            <p>Nom: Ona</p>
-                            <p>Nom usuari: Queralt</p>
+                            <p>Nom: Ona akbar</p>
                             <p>Edat: 42</p>
                             <p>Data registre: getDate()</p>
                             <p>Correu electrònic: a@a.com</p>
