@@ -1,4 +1,4 @@
-﻿body {
+body {
     padding-top: 80px;
     padding-bottom:200px;
     /*padding-left: 20px;*/
@@ -81,6 +81,7 @@ footer {
 .titol {
     color: #000000;
 }
+
 .imatge_fons {
     width:50%;
     height:50%;
@@ -93,6 +94,10 @@ footer {
     text-align:center;
 }
 
-#imgLogo{
+#imgLogo{}
+
+.navbar-brand>img {
+    display: block;
+
     max-width: 80px;
 }

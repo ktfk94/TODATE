@@ -38,7 +38,7 @@
                     <li><a href="Home.aspx">TODATE</a></li>
                 </ul>
                 <ul class="nav navbar-nav  navbar-right">
-                    <li><a data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span>&nbsp Iniciar Sessió</a></li>
+                    <li><a data-toggle="modal" data-target="#ModalLogIn"><span class="glyphicon glyphicon-log-in"></span>&nbsp Iniciar Sessió</a></li>
                     <li><a href="Registre.aspx"><span class="glyphicon glyphicon-user"></span>Registre</a></li>
                 </ul>
             </div>

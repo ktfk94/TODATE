@@ -1,11 +1,11 @@
-﻿using System;
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 public partial class Registre : System.Web.UI.Page
@@ -16,7 +16,7 @@ public partial class Registre : System.Web.UI.Page
     static string tipo = "";
     static string guid = Guid.NewGuid().ToString();
     static Usuari user = new Usuari();
-    string pwEncrypt = "Encrypt123ºº";
+    string pwEncrypt = "";
     protected void amagarPanels()
     {
         PanelBarraProgres.Visible = false;
@@ -31,13 +31,16 @@ public partial class Registre : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
-        {            
+        {
+            
             amagarPanels();
             PanelInici.Visible = true;
             LinkButtonEnrrere.Visible = false;
             contPanel = 0;
             OmplirAny();
             omplirDataRegistre(31, false);
+
+
         }
     }
 
@@ -45,7 +48,7 @@ public partial class Registre : System.Web.UI.Page
     {
         if (FileUpload1.HasFile)
         {
-            string extension = Path.GetExtension(FileUpload1.FileName);
+            string extension = System.IO.Path.GetExtension(FileUpload1.FileName);
             if (extension == ".jpg" || extension == ".png")
             {
                 string path = Server.MapPath("ImatgesPujades\\");
@@ -296,13 +299,21 @@ public partial class Registre : System.Web.UI.Page
             feb = true;
         }
         omplirDataRegistre(days, feb);
+        
     }
 
     protected void LinkButtonAcceptar_Click(object sender, EventArgs e)
     {
-
+       if(FMong.preUploadSelect(TextBoxDadesNom.Text, TextBoxDadesContra.Text))
+        {
+            //codi per anar a la seguent pagina
+        }
+        else
+        {
+            LabelError.Visible = true;
+        }
+        
     }
-
     protected void ButtonAfegirGust_Click(object sender, EventArgs e)
     {
         ListItem item = new ListItem();

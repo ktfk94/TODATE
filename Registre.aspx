@@ -397,9 +397,11 @@
     </div>
 
     <!--INICI MODAL-->
-    <div class="modal fade" id="myModal" role="dialog">
+    <asp:Panel ID="PanelModal" runat="server" DefaultButton="LinkButtonAcceptar">
+        <div class="modal fade" id="modalLogIn" role="dialog">
             <div class="modal-dialog">
                 Modal content
+               
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -409,18 +411,19 @@
                         <div class="form-group">
                             <asp:Label ID="LabelDadesNom" CssClass="col-sm-2 control-label" runat="server" Text="Usuari"></asp:Label>
                             <div class="col-sm-10">
-                                <asp:TextBox ID="TextBoxDadesNom" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxDadesNom" CssClass="form-control" runat="server" ></asp:TextBox>
                             </div>
                         </div>
                         <div class="form-group">
+
                             <asp:Label ID="LabelDadesContrasenya" CssClass="col-sm-2 control-label" runat="server" Text="Contrasenya"></asp:Label>
                             <div class="col-sm-10">
                                 <asp:TextBox ID="TextBoxDadesContra" CssClass="form-control" runat="server" TextMode="Password"></asp:TextBox>
                             </div>
                         </div>
-                        <div class="form-group" id="buttonIniciSessio">
+                        <div class="form-group" id="buttonForgetPw">
                             <asp:Label ID="LabelRecuperar" CssClass="label label-warning" runat="server" Text="Has oblidat la contrasenya?"></asp:Label><br />
-                            <asp:Label ID="Label1" CssClass="label label-danger" runat="server" Text="Aqui va per codi si el nom i contrasenya son correctes"></asp:Label>
+                            <asp:Label ID="LabelError" CssClass="label label-danger" runat="server" Text="El correu o la contrasenya son incorrectes" Visible="false"></asp:Label>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -433,5 +436,6 @@
 
             </div>
         </div>
+    </asp:Panel>
     <!--FI MODAL-->
 </asp:Content>
