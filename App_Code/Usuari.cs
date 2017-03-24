@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +10,7 @@ public class Usuari
 {
     public string name;
     public string birthdate;
-    public string img;
+    public byte[] img;
     public string sex;
     public string sexWanted;
     public string mail;
@@ -29,5 +29,4 @@ public class Usuari
 
     public Usuari() {}
        
-    
 }

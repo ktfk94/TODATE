@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -21,11 +21,12 @@ public class Encrypt
     // This constant is used to determine the keysize of the encryption algorithm in bits.
     // We divide this by 8 within the code below to get the equivalent number of bytes.
     private const int Keysize = 256;
+    private static string passPhrase = "ContraseñaEncript12345º";
 
     // This constant determines the number of iterations for the password bytes generation function.
     private const int DerivationIterations = 1000;
 
-    public static string Encriptar(string plainText, string passPhrase)
+    public static string Encriptar(string plainText)
     {
         // Salt and IV is randomly generated each time, but is preprended to encrypted cipher text
         // so that the same Salt and IV values can be used when decrypting.  
@@ -62,8 +63,9 @@ public class Encrypt
         }
     }
 
-    public static string Desencriptar(string cipherText, string passPhrase)
+    public static string Desencriptar(string cipherText)
     {
+        
         // Get the complete stream of bytes that represent:
         // [32 bytes of Salt] + [32 bytes of IV] + [n bytes of CipherText]
         var cipherTextBytesWithSaltAndIv = Convert.FromBase64String(cipherText);
@@ -111,4 +113,3 @@ public class Encrypt
         return randomBytes;
     }
 }
-

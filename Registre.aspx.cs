@@ -1,4 +1,3 @@
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -51,6 +50,10 @@ public partial class Registre : System.Web.UI.Page
             string extension = System.IO.Path.GetExtension(FileUpload1.FileName);
             if (extension == ".jpg" || extension == ".png")
             {
+
+                Stream img = FileUpload1.FileContent;
+                byte[] m_Bytes = UtilSignUp.ReadToEnd(img);
+                user.img = m_Bytes;
                 string path = Server.MapPath("ImatgesPujades\\");
 
                 String imageName = guid + FileUpload1.FileName;
@@ -78,7 +81,7 @@ public partial class Registre : System.Web.UI.Page
                 PanelOpcionsRelacio.Visible = false;
                 break;
             case 1:
-                user.pw = Encrypt.Encriptar(TextBoxContra.Text, pwEncrypt);
+                user.pw = Encrypt.Encriptar(TextBoxContra.Text);
                 PanelInici.Visible = false;
                 PanelBenvinguda.Visible = true;
                 PanelDadesNecessaries.Visible = false;
@@ -215,7 +218,6 @@ public partial class Registre : System.Web.UI.Page
         
 
         user.name = TextBoxCognoms.Text + ", " + TextBoxNom.Text;
-        user.img = "";
         user.iv = Utils.selectedIndexesOfCheckBoxList(CheckboxlistIV);
         user.mail = TextBoxCorreu.Text;
         user.religion = "";
@@ -230,7 +232,7 @@ public partial class Registre : System.Web.UI.Page
         user.colour = DropdownlistColor.SelectedItem.Text;
         user.civilstatus = TextBoxCivil.Text;
         user.birthplace = TextBoxOrigen.Text;
-        user.birthdate = getBirthDate();
+        user.birthdate = Encrypt.Encriptar(getBirthDate());
 
         FMong.preUpload(user, tipo);
         LabelFi.Text = "Benvingut a TODATE";

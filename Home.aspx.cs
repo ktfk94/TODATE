@@ -23,7 +23,10 @@ public partial class Home : System.Web.UI.Page
     {
         if (FMong.preUploadSelect(TextBoxDadesNom.Text,TextBoxDadesContra.Text))
         {
+            Session["mail"] = TextBoxDadesNom.Text;
+            
             Response.Redirect("PagPrincipalIniciat.aspx");
+            
         }
         else
         {

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageIniciat.master" AutoEventWireup="true" CodeFile="PaginaPerfil.aspx.cs" Inherits="PaginaPerfil" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageIniciat.master" AutoEventWireup="true" CodeFile="PaginaPerfil.aspx.cs" Inherits="PaginaPerfil" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -10,7 +10,7 @@
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-3">
-                        <img class="imatgeperfil" src="Imatges/prova img face.jpg" />
+                        <img id="ImgPerfil" class="imatgeperfil" src="Imatges/prova img face.jpg" runat="server" />
                     </div>
                     <div class="col-md-3">
                         <div class="col-md-10">
@@ -54,4 +54,3 @@
         </div>
     </div>
 </asp:Content>
-

@@ -81,7 +81,7 @@ public class FMong
             {
                 { "name",  user.name},
                 { "birthdate", user.birthdate},
-                //{ "img", "Blank"},
+                { "img", user.img},
                 { "sex", user.sex },
                 { "sexWanted", user.sexWanted },
                 { "mail", user.mail },
@@ -140,12 +140,13 @@ public class FMong
         {
             valueMail = doc2["mail"];
             valuePw = doc2["pw"];
+            
         }
 
         bool comp = false;
         if (valueMail != null && valuePw != null)
         {
-            if (valueMail.AsString == correu && Encrypt.Desencriptar(valuePw.AsString, "") == pw)
+            if (valueMail.AsString == correu && Encrypt.Desencriptar(valuePw.AsString) == pw)
             {
                 comp = true;
             }
@@ -170,11 +171,13 @@ public class FMong
         MongoDB.Bson.BsonValue valueName = null;
         MongoDB.Bson.BsonValue valueBirth = null;
         MongoDB.Bson.BsonValue valueMail = null;
+        MongoDB.Bson.BsonValue valueImg = null;
         if (doc2 != null)
         {
             valueName = doc2["name"];
             valueMail = doc2["mail"];
             valueBirth = doc2["birthdate"];
+            valueImg = doc2["img"];
         }
 
         bool comp = false;
@@ -185,6 +188,7 @@ public class FMong
                 user.name = valueName.AsString;
                 user.mail = valueMail.AsString;
                 user.birthdate = valueBirth.AsString;
+                user.img = valueImg.AsByteArray;
             }
         }
 
