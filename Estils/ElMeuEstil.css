@@ -81,6 +81,7 @@ footer {
 .titol {
     color: #000000;
 }
+
 .imatge_fons {
     width:50%;
     height:50%;
@@ -92,10 +93,11 @@ footer {
 .blocXats{
     text-align:center;
 }
+
+#imgLogo{}
+
 .navbar-brand>img {
     display: block;
+
     max-width: 80px;
-}
-.imatgeperfil {
-    max-width: 200px;
 }

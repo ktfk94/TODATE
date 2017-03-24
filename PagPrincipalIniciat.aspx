@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageIniciat.master" AutoEventWireup="true" CodeFile="PagPrincipalIniciat.aspx.cs" Inherits="PagPrincipalIniciat" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
@@ -12,7 +13,7 @@
             <asp:Label ID="LabelCercador" CssClass="col-sm-1 control-label" runat="server" Text="Label">Cercador</asp:Label>
             <div class="col-sm-11">
                 <asp:TextBox ID="TextBoxCercador" CssClass="form-control" PlaceHolder="A qui busques?" runat="server" 
-                    OnTextChanged="TextBoxCercador_TextChanged"></asp:TextBox>
+                    OnTextChanged="TextBoxCercador_TextChanged" ></asp:TextBox>
             </div>
         </div>
         <div class="panel-body blocXats">
