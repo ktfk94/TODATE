@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageIniciat.master" AutoEventWireup="true" CodeFile="PaginaPerfil.aspx.cs" Inherits="PaginaPerfil" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageIniciat.master" AutoEventWireup="true" CodeFile="PaginaPerfil.aspx.cs" Inherits="PaginaPerfil" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -54,4 +54,3 @@
         </div>
     </div>
 </asp:Content>
-
