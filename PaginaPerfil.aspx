@@ -10,7 +10,7 @@
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-3">
-                        <img class="imatgeperfil" src="Imatges/prova img face.jpg" />
+                        <img id="ImgPerfil" class="imatgeperfil" src="Imatges/prova img face.jpg" runat="server" />
                     </div>
                     <div class="col-md-3">
                         <div class="col-md-10">

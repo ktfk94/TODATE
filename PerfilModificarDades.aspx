@@ -13,41 +13,44 @@
                     <div class="col-md-3">
                         <img class="imatgeperfil" src="Imatges/prova img face.jpg" />
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="col-md-10">
-                            <p>Nom: <asp:TextBox ID="TextBoxNom" runat="server"/></p>
- +                          <p>Edat: <asp:TextBox ID="TextBoxEdat" runat="server"/></p>
- +                          <p>Data registre: <asp:TextBox ID="TextBoxData" runat="server"/></p>
- +                          <p>Correu electrònic: <asp:TextBox ID="TextBoxCorreu" runat="server"/></p>
+                            <p>Nom: Ona</p>
+                            <p>Nom usuari: Queralt</p>
+                            <p>Edat: 42</p>
+                            <p>Data registre: getDate()</p>
+                            <p>Correu electrònic: a@a.com</p>
                             <br />
                         </div>
 
                         <div class="col-md-10">
                             <ul class="list-group">
                                 <li class="list-group-item active">Gustos</li>
+                                <li class="list-group-item">Videojocs</li>
+                                <li class="list-group-item">Programar</li>
+                                <li class="list-group-item">Veure sèreis</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="col-md-10">
-                            <p>Color preferit: <asp:TextBox ID="TextBoxColor" runat="server"/></p>
- +                          <p>Figura: <asp:TextBox ID="TextBoxFigura" runat="server"/></p>
- +                          <p>Tipus de cabell: <asp:TextBox ID="TextBoxCabell" runat="server"/></p>
- +                          <p>Estat civil: <asp:TextBox ID="TextBoxCivil" runat="server"/></p>
- +                          <p>Fumador: <asp:TextBox ID="TextBoxFumador" runat="server"/></p>
+                            <p>Color preferit: vermell</p>
+                            <p>Figura: esbelta</p>
+                            <p>Tipus de cabell: llis</p>
+                            <p>Estat civil: solter/a</p>
+                            <p>Fumador:Weed</p>
                             <br />
                         </div>
                         <div class="col-md-10">
                             <ul class="list-group">
                                 <li class="list-group-item active">Esports</li>
-                                <li class="list-group-item">
- +                                  <asp:TextBox runat="server" Text="golf"/>
- +                                  <span class="glyphicon glyphicon-remove"/>
- +                              </li>
+                                <li class="list-group-item">Bàsquet</li>
+                                <li class="list-group-item">Futbol</li>
+                                <li class="list-group-item">Dansa</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-1">
+                    <div class="col-md-3">
                         <asp:Button ID="ButtonCanviarDades" runat="server" Text="CanviarDades" />
                     </div>
                 </div>
