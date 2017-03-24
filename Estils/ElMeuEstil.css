@@ -94,7 +94,9 @@ footer {
     text-align:center;
 }
 
-#imgLogo{}
+#ImageNavPerfil{
+    max-width: 50px;
+}
 
 .navbar-brand>img {
     display: block;
