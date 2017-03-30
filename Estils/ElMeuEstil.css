@@ -104,3 +104,10 @@ footer {
     max-width: 80px;
 
 }
+.borrarElement{
+    
+    background-size: cover;
+    border: none;
+    max-height: 20px;
+    max-width: 20px;
+}

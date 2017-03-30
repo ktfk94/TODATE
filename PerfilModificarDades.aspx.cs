@@ -12,21 +12,4 @@ public partial class PerfilModificarDades : System.Web.UI.Page
     {
 
     }
-
-    protected void LinkButtonAfegirEsport_Click(object sender, EventArgs e)
-    {
-        HtmlGenericControl nouLi = new HtmlGenericControl("li");
-        nouLi.Attributes.Add("class", "list-group-item");
-
-        HtmlGenericControl nouText = new HtmlGenericControl("asp:TextBox");
-        nouText.InnerHtml = TextBoxAfegirEsport.Text;
-
-        HtmlGenericControl nouButo = new HtmlGenericControl("asp:LinkButton");
-        nouButo.InnerHtml = "<span aria-hidden='true' class='glyphicon glyphicon-remove'></span>";
-
-        nouLi.Controls.Add(nouText);
-        nouLi.Controls.Add(nouButo);
-        
-        LlistatEsports.Controls.Add(nouLi);
-    }
 }
