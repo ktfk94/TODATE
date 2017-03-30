@@ -39,7 +39,7 @@
                 </ul>
                 <ul class="nav navbar-nav  navbar-right">
                     <li><a data-toggle="modal" data-target="#ModalLogIn"><span class="glyphicon glyphicon-log-in"></span>&nbsp Iniciar Sessió</a></li>
-                    <li><a href="Registre.aspx"><span class="glyphicon glyphicon-user"></span>Registre</a></li>
+                    <li><a href="Registre.aspx"><span class="glyphicon glyphicon-user"></span>&nbsp Registre</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -58,10 +58,10 @@
 
     <footer>
         <div class="text-center center-block">
-            <a href="#"><i class="fa fa-facebook-square fa-3x social"></i></a>
-            <a href="#"><i class="fa fa-twitter-square fa-3x social"></i></a>
-            <a href="#"><i class="fa fa-google-plus-square fa-3x social"></i></a>
-            <a href="#"><i class="fa fa-envelope-square fa-3x social"></i></a>
+            <a class="font-awesome" href="#"><i class="fa fa-facebook-square  social fa-2x "></i></a>
+            <a class="font-awesome" href="#"><i class="fa fa-twitter-square  social fa-2x "></i></a>
+            <a class="font-awesome" href="#"><i class="fa fa-google-plus-square  social fa-2x "></i></a>
+            <a class="font-awesome" href="#"><i class="fa fa-envelope-square  social fa-2x "></i></a>
         </div>
         <div>
             <h4 class="text-center copyright">© Copyright Todate 2017</h4>

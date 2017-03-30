@@ -196,6 +196,7 @@ public partial class Registre : System.Web.UI.Page
             comprovarEnrrere();
         }
     }
+    
 
     protected void comprovarEnrrere()
     {

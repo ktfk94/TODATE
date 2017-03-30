@@ -3,6 +3,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+
+    <div>
+        <h3 style="text-align:center">Pas <span>1</span> de 4</h3>
+        <progress id="BarraProgres" max="100" value="25"></progress>
+    </div>
+    
     <div class="panel panel-primary" id="titol" runat="server">
         <div class="panel-heading">
             <h3>Registre</h3>
@@ -12,7 +18,8 @@
     <div class="panel panel-primary" id="PanelBarraProgres" runat="server">
         <!-- COM POSAR UNA BARRA DE PROGRÉS 3.3 -->
         <div class="panel-heading"></div>
-        <div class="panel-body"></div>
+        <div class="panel-body">
+        </div>
     </div>
 
     <div class="panel panel-primary" id="PanelMissatges" runat="server">
@@ -70,7 +77,7 @@
             </div>
             <div class="form-group" id="correu">
                 <asp:Label ID="LabelCorreu" CssClass="col-sm-2 control-label" runat="server" Text="Correu electrònic"></asp:Label>
-                <div class="col-sm-10">
+                <div style="margin-bottom:10px;" class="col-sm-10">
                     <asp:TextBox ID="TextBoxCorreu" CssClass="form-control" runat="server" TextMode="Email"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidatorCorreu" CssClass="alert-danger label-danger label" runat="server"
                         ErrorMessage="El correu és necessari!" ControlToValidate="TextBoxCorreu" Display="Dynamic"></asp:RequiredFieldValidator>
@@ -78,13 +85,13 @@
             </div>
             <div class="form-group" id="contra">
                 <asp:Label ID="LabelContra" CssClass="col-sm-2 control-label" runat="server" Text="Contrasenya"></asp:Label>
-                <div class="col-sm-10">
+                <div  style="margin-bottom:10px;" class="col-sm-10">
                     <asp:TextBox ID="TextBoxContra" CssClass="form-control" runat="server" TextMode="Password"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidatorContra" CssClass="alert-danger label-danger label" runat="server"
                         ErrorMessage="La contrasenya és necessaria!" ControlToValidate="TextBoxContra" Display="Dynamic"></asp:RequiredFieldValidator>
                 </div>
             </div>
-            <div class="form-group" id="conf">
+            <div style="margin-bottom:10px;" class="form-group" id="conf">
                 <asp:Label ID="LabelConf" CssClass="col-sm-2 control-label" runat="server" Text="Confirmar la contrasenya"></asp:Label>
                 <div class="col-sm-10">
                     <asp:TextBox ID="TextBoxConf" CssClass="form-control" runat="server" TextMode="Password"></asp:TextBox>
@@ -385,11 +392,11 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6">
-                        <asp:LinkButton ID="LinkButtonEnrrere" runat="server" OnClick="LinkButtonEnrrere_Click" CausesValidation="False">Enrrere</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButtonEnrrere" CssClass="botoEnrere" runat="server" OnClick="LinkButtonEnrrere_Click" CausesValidation="False">Enrrere</asp:LinkButton>
                     </div>
                     <div class="col-md-6" id="butoContinuarRegistre">
                         <asp:Label ID="LabelFi" CssClass="label label-warning" runat="server" Text=""></asp:Label>
-                        <asp:LinkButton ID="LinkButtonContinuar" runat="server" OnClick="LinkButtonContinuar_Click">Continuar</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButtonContinuar" runat="server" OnClick="LinkButtonContinuar_Click" CssClass="botoContinuar">Continuar</asp:LinkButton>
                     </div>
                 </div>
             </div>
@@ -438,4 +445,16 @@
         </div>
     </asp:Panel>
     <!--FI MODAL-->
+
+    <script type="text/javascript">
+        function ValueBarra(num) {
+
+            document.getElementById("BarraProgres").value = num;
+        }
+    </script>
+
 </asp:Content>
+
+
+
+
