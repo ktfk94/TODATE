@@ -6,12 +6,12 @@
 
     <div class="container-fluid">
         <div class="row">
-            <h2 style="text-align: center">Dades de Perfil</h2>
+            <h2 style="text-align: center">Modificar les dades de Perfil</h2>
             <br />
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-3">
-                        <img class="imatgeperfil" src="Imatges/prova img face.jpg" />
+                        <img class="imatgeperfil" runat="server" src="Imatges/prova img face.jpg" id="ImgPerfil" />
                     </div>
                     <div class="col-md-4">
                         <div class="col-md-10">
@@ -61,7 +61,7 @@
                         </div>
                     </div>
                     <div class="col-md-1">
-                        <asp:Button ID="ButtonCanviarDades" runat="server" Text="CanviarDades" />
+                        <asp:Button ID="ButtonCanviarDades" runat="server" Text="Guardar dades" OnClick="ButtonCanviarDades_Click" UseSubmitBehavior="False"/>
                     </div>
                 </div>
             </div>

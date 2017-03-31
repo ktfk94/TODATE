@@ -20,6 +20,17 @@ public partial class PaginaPerfil : System.Web.UI.Page
         LabelCorreu.Text = user.mail;
         LabelData.Text = Convert.ToString(DateTime.Now);
         LabelEdat.Text = Encrypt.Desencriptar(user.birthdate.ToString());
+        
+        LabelColor.Text = user.colour;
+        LabelFigura.Text = user.shape;
+        LabelCabell.Text = user.typeOfHair;
+        LabelCivil.Text = user.civilstatus;
+
+        String[] esports = user.sports;
+        String[] gustos = user.tastes;
+        String[] IVs = user.iv;
+
+        ScriptManager.RegisterStartupScript(this, typeof(Page), "lel", "$(document).ready(function(){});", true);
     }
 
     protected void ButtonCanviarDades_Click(object sender, EventArgs e)
