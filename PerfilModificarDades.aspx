@@ -22,10 +22,14 @@
                             <br />
                         </div>
 
-                        <div class="col-md-10">
+                        <div id="divGustos" class="col-md-10">
                             <ul class="list-group">
                                 <li class="list-group-item active">Gustos</li>
                             </ul>
+                            <asp:TextBox ID="TextBoxAfegirGust" runat="server" ClientIDMode="Static"/>
+                            <asp:LinkButton ID="LinkButtonAfegirGust" runat="server" CausesValidation="False" ClientIDMode="Static" OnClientClick="return false;">
+                                <span aria-hidden="true" class="glyphicon glyphicon-plus"></span>
+                            </asp:LinkButton>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -40,15 +44,18 @@
                         <div id="divEsports" class="col-md-10">
                             <ul id="LlistatEsports" runat="server" class="list-group">
                                 <li class="list-group-item active">Esports</li>
-                                <li class="list-group-item">
-                                    <asp:TextBox runat="server" Text="golf"/>
-                                    <asp:LinkButton ID="LinkButton1" runat="server">
-                                        <span aria-hidden="true" class="glyphicon glyphicon-remove"></span>
-                                    </asp:LinkButton>
-                                </li>
                             </ul>
                             <asp:TextBox ID="TextBoxAfegirEsport" runat="server" ClientIDMode="Static"/>
-                            <asp:LinkButton ID="LinkButtonAfegirEsport" runat="server" CausesValidation="False" ClientIDMode="Static" OnClick="LinkButtonAfegirEsport_Click">
+                            <asp:LinkButton ID="LinkButtonAfegirEsport" runat="server" CausesValidation="False" ClientIDMode="Static" OnClientClick="return false;">
+                                <span aria-hidden="true" class="glyphicon glyphicon-plus"></span>
+                            </asp:LinkButton>
+                        </div>
+                        <div id="divIV" class="col-md-10">
+                            <ul id="Ul1" runat="server" class="list-group">
+                                <li class="list-group-item active">Imperfeccions i virtuds</li>
+                            </ul>
+                            <asp:TextBox ID="TextBoxAfegirIV" runat="server" ClientIDMode="Static"/>
+                            <asp:LinkButton ID="LinkButtonAfegirIV" runat="server" CausesValidation="False" ClientIDMode="Static" OnClientClick="return false;">
                                 <span aria-hidden="true" class="glyphicon glyphicon-plus"></span>
                             </asp:LinkButton>
                         </div>
