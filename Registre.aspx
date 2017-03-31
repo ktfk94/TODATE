@@ -9,10 +9,9 @@
         <progress id="BarraProgres" max="100" value="25"></progress>
     </div>
     
-    <div class="panel panel-primary" id="titol" runat="server">
-        <div class="panel-heading">
-            <h3>Registre</h3>
-        </div>
+    <div>
+      <h3>Registre</h3>
+
     </div>
 
     <div class="panel panel-primary" id="PanelBarraProgres" runat="server">
@@ -114,11 +113,11 @@
                     Text="Volem saber més coses sobre tu per a poder crear un perfil complet. Primer de tot, necessitarem una fotografía teva que servirà com a fotografía
                      de perfil. La pots canviar en qualsevol moment des del perfil. Si vols en pots introduïr més d'una."></asp:Label>
                 <!-- COM POSAR UNA FOTUUUUUUUU -->
-                <asp:Image ID="ImagePerfil" CssClass="pujarImgPerfil" runat="server" />
+                <br /><asp:Image ID="ImagePerfil" CssClass="pujarImgPerfil" runat="server" />
             </div>
             <div class="form-group" id="fotu">
                 <asp:FileUpload ID="FileUpload1" runat="server" AllowMultiple="False" />
-                <asp:Button ID="ButtonPujar" runat="server" Text="Pujar" OnClick="ButtonPujar_Click" />
+                <br /><asp:Button ID="ButtonPujar" runat="server" Text="Pujar" OnClick="ButtonPujar_Click" BackColor="#FFB45F" BorderColor="#FFB45F" ForeColor="White" />
             </div>
         </div>
     </div>
@@ -391,13 +390,14 @@
         <div class="panel-body">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-6">
-                        <asp:LinkButton ID="LinkButtonEnrrere" CssClass="botoEnrere" runat="server" OnClick="LinkButtonEnrrere_Click" CausesValidation="False">Enrrere</asp:LinkButton>
-                    </div>
-                    <div class="col-md-6" id="butoContinuarRegistre">
+                    <div class="col-md-12 text-right">
+                        <asp:LinkButton ID="LinkButtonEnrrere" CssClass="botoEnrere align-right" runat="server" OnClick="LinkButtonEnrrere_Click" CausesValidation="False">Enrrere</asp:LinkButton>
                         <asp:Label ID="LabelFi" CssClass="label label-warning" runat="server" Text=""></asp:Label>
-                        <asp:LinkButton ID="LinkButtonContinuar" runat="server" OnClick="LinkButtonContinuar_Click" CssClass="botoContinuar">Continuar</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButtonContinuar" runat="server" OnClick="LinkButtonContinuar_Click" CssClass="botoContinuar" ClientIDMode="Static">Continuar</asp:LinkButton>
                     </div>
+                    <!--<div class="col-md-1" id="butoContinuarRegistre">
+                        
+                    </div>-->
                 </div>
             </div>
         </div>
@@ -445,13 +445,6 @@
         </div>
     </asp:Panel>
     <!--FI MODAL-->
-
-    <script type="text/javascript">
-        function ValueBarra(num) {
-
-            document.getElementById("BarraProgres").value = num;
-        }
-    </script>
 
 </asp:Content>
 

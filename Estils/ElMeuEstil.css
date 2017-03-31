@@ -1,9 +1,24 @@
+footer {
+    padding-top: 12px;
+    position: fixed;
+    height: 50px;
+    bottom: 0;
+    width: 100%;
+    background-color: #51585c;
+    border: 1px solid;
+    border-top-color:#ffb45f;
+    padding-left: 0px !important;
+    
+}
+
+
 body {
     padding-top: 100px;
     padding-bottom:200px;
-    padding-left: 20px;
+    /*padding-left: 20px;*/
     padding-right: 20px;
-  
+    background-color:#F0F7F4;
+    /* possible color #393E41   #51585c*/ 
 }
 
 .navbar-fixed-top .navbar-brand {
@@ -23,8 +38,8 @@ body {
     max-width: 50px;
 }
 .pujarImgPerfil{
-    max-height: 300px;
-    max-width: 300px;
+    max-height: 200px;
+    max-width: 200px;
 }
 
 .benvingudaText {
@@ -45,14 +60,7 @@ body {
     padding: 0 15px;
 }
 
-footer {
-    padding-top: 12px;
-    position: fixed;
-    height: 100px;
-    bottom: 0;
-    width: 100%;
-    background-color: #c4c4c4;
-}
+
 
 .buto {
     font-size: 40px;
@@ -67,7 +75,7 @@ footer {
         color: #D87939;
         background-color: #ffffff;
         border-color: #D87939;
-        border-radius: 5px;
+       border-radius: 5px;
     }
 
 .wrapper {
@@ -216,3 +224,39 @@ progress::-webkit-progress-value {
     filter: alpha(opacity=20);
     /* opacity: .2; */
 }
+
+/*Footer Font awesome*/
+.font-awesome {
+    color: #ffb45f;
+}
+a:focus, a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+h3 {
+    color:#ffffff;
+}
+
+
+/*navbar*/
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: #ffb45f;
+}
+.navbar-default {
+    background-color: #ffb45f;
+    border-color: #ffb45f;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #000000;
+}
+
+
+
+.btn-primary {
+    color: #fff;
+    background-color: #ffb45f;
+    border-color: #ffb45f;
+}
+
+/*#393E41*/

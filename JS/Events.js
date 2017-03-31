@@ -1,6 +1,6 @@
 ﻿$(document).ready(function () {
 
-   var total = 0
+    var total = 25;
     $('#TextBoxCercador').keypress(function () {
         var buscar = $(this).text();
         $('#espaiXats > div').each(function () {
@@ -8,10 +8,8 @@
         });
     });
 
-    $('#LinkButtonContinuar').click(function(){
-        alert("dshdshssd");
-        var barra = $('#BarraProgres');
-        barra.value = total += 25;
+    $('#LinkButtonContinuar').on('click', function () {
+        $('#BarraProgres').val(total+=25);
     });
     
     
