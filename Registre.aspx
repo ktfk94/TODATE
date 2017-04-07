@@ -278,7 +278,7 @@
         <div class="panel-body">
             <div class="form-group">
                 <asp:Label ID="LabelTipusRel" CssClass="col-sm-2 control-label" runat="server" Text="Tipus de relació"></asp:Label>
-                <asp:DropDownList ID="DropdownlistRelació" runat="server">
+                <asp:DropDownList ID="DropdownlistRelacio" runat="server">
                     <asp:ListItem>-</asp:ListItem>
                     <asp:ListItem>Buscar parella</asp:ListItem>
                     <asp:ListItem>Aventura</asp:ListItem>

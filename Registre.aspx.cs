@@ -225,7 +225,7 @@ public partial class Registre : System.Web.UI.Page
         user.sex = SeleccioSexe();
         user.sexWanted = SeleccioSexeBuscat();
         user.shape = TextBoxFigura.Text;
-        user.sports[0] = TextBoxEsports.Text;
+        //user.sports[0] = TextBoxEsports.Text;
         user.tastes = Utils.selectedIndexesOfCheckBoxList(CheckListGustos);
         user.typeOfHair = TextBoxCabell.Text;
         user.ubication = "Falta omplir";

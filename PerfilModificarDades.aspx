@@ -17,9 +17,9 @@
                     <div class="col-md-4">
                         <div class="col-md-10">
                             <p>Nom: <asp:TextBox ID="TextBoxNom" runat="server"/></p>
-                            <p>Edat: <asp:TextBox ID="TextBoxEdat" runat="server"/></p>
-                            <p>Data registre: <asp:TextBox ID="TextBoxData" runat="server"/></p>
-                            <p>Correu electrònic: <asp:TextBox ID="TextBoxCorreu" runat="server"/></p>
+                            <p>Edat: <asp:Label ID="LabelEdat" runat="server"></asp:Label></p>
+                            <p>Data registre: <asp:Label ID="LabelData" runat="server"></asp:Label></p>
+                            <p>Correu electrònic: <asp:Label ID="LabelMail" runat="server"></asp:Label></p>
                             <br />
                         </div>
 

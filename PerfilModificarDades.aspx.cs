@@ -19,9 +19,9 @@ public partial class PerfilModificarDades : System.Web.UI.Page
 
             ImgPerfil.Src = "data:image/png;base64," + Convert.ToBase64String(user.img);
             TextBoxNom.Text = user.name;
-            TextBoxCorreu.Text = user.mail;
-            TextBoxData.Text = Convert.ToString(DateTime.Now);
-            TextBoxEdat.Text = Encrypt.Desencriptar(user.birthdate.ToString());
+            LabelMail.Text = user.mail;
+            LabelData.Text = Convert.ToString(DateTime.Now);
+            LabelEdat.Text = Encrypt.Desencriptar(user.birthdate.ToString());
             TextBoxColor.Text = user.colour;
             TextBoxFigura.Text = user.shape;
             TextBoxCabell.Text = user.typeOfHair;
