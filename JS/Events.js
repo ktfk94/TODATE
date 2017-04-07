@@ -1,4 +1,16 @@
-﻿$(document).ready(function () {
+$(document).ready(function () {
+
+    var total = 25;
+    $('#TextBoxCercador').keypress(function () {
+        var buscar = $(this).text();
+        $('#espaiXats > div').each(function () {
+            //asd
+        });
+    });
+
+    $('#LinkButtonContinuar').on('click', function () {
+        $('#BarraProgres').val(total+=25);
+    });
     //Load
     function loadAirems(esports,gustos,IVs) {
         for (var cont = 0; cont < esports.length;cont++){

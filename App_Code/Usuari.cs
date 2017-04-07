@@ -28,5 +28,4 @@ public class Usuari
     public string[] iv;
 
     public Usuari() {}
-       
 }

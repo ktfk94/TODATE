@@ -1,9 +1,24 @@
+footer {
+    padding-top: 12px;
+    position: fixed;
+    height: 50px;
+    bottom: 0;
+    width: 100%;
+    background-color: #51585c;
+    border: 1px solid;
+    border-top-color:#ffb45f;
+    padding-left: 0px !important;
+    
+}
+
+
 body {
-    padding-top: 80px;
+    padding-top: 100px;
     padding-bottom:200px;
     /*padding-left: 20px;*/
     padding-right: 20px;
-  
+    background-color:#F0F7F4;
+    /* possible color #393E41   #51585c*/ 
 }
 
 .navbar-fixed-top .navbar-brand {
@@ -23,8 +38,8 @@ body {
     max-width: 50px;
 }
 .pujarImgPerfil{
-    max-height: 300px;
-    max-width: 300px;
+    max-height: 200px;
+    max-width: 200px;
 }
 
 .benvingudaText {
@@ -45,15 +60,6 @@ body {
     padding: 0 15px;
 }
 
-footer {
-    padding-top: 12px;
-    position: fixed;
-    height: 100px;
-    bottom: 0;
-    width: 100%;
-    background-color: #000000;
-}
-
 .buto {
     font-size: 40px;
     background-color: #D87939;
@@ -67,7 +73,7 @@ footer {
         color: #D87939;
         background-color: #ffffff;
         border-color: #D87939;
-        border-radius: 5px;
+       border-radius: 5px;
     }
 
 .wrapper {
@@ -75,7 +81,7 @@ footer {
 }
 
 .copyright {
-    color: #ffffff;
+    color: #000000;
 }
 
 .titol {
@@ -102,12 +108,153 @@ footer {
     display: block;
 
     max-width: 80px;
+}
+/*imatges footer*/
+.font-awesome {
+    color: #808080;
+}
 
+/*Panels*/
+.panel-primary {
+    border-color: #9d9d9d;
 }
-.borrarElement{
-    
-    background-size: cover;
-    border: none;
-    max-height: 20px;
-    max-width: 20px;
+.panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid;
+    /* border: 1px solid transparent; */
+    border-radius: 4px;
+    /* -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05); */
+    /* box-shadow: 0 1px 1px rgba(0,0,0,.05); */
 }
+.panel-primary>.panel-heading {
+    color: #080808;
+    background-color: #ffb45f;
+    border-color: #337ab7;
+}
+.panel-heading {
+    padding: 10px 15px;
+    border-bottom: none !important;
+   
+}
+.col-md-4 {
+    display:inline;
+}
+
+.col-md-3 {
+    display:inline;
+}
+/*Progress bar*/
+progress {
+	width: 75%;
+	height: 20px;
+	margin: 50px auto;
+	display: block;
+	/* Important Thing */
+	-webkit-appearance: none;
+	border: none;
+}
+progress::-webkit-progress-bar {
+	background: black;
+	border-radius: 50px;
+	padding: 2px;
+	box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.2);
+}
+progress::-webkit-progress-value {
+	border-radius: 50px;
+	box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
+	background:
+		-webkit-linear-gradient(45deg, transparent, transparent 33%, rgba(0, 0, 0, 0.1) 33%, rgba(0, 0, 0, 0.1) 66%, transparent 66%),
+		-webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.2)),
+		-webkit-linear-gradient(left, #ffffff, #ffffff);
+	
+	/* Looks great, now animating it */
+	background-size: 25px 14px, 100% 100%, 100% 100%;
+	-webkit-animation: move 5s linear 0 infinite;
+}
+@-webkit-keyframes move {
+	0% {background-position: 0px 0px, 0 0, 0 0}
+	100% {background-position: -100px 0px, 0 0, 0 0}
+}
+.botoContinuar {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #ffb45f;
+    padding: 5px;
+    border-radius: 5px;
+    text-decoration:none
+}
+.botoEnrere {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #ffb45f;
+    padding: 5px;
+    border-radius: 5px;
+    text-decoration:none
+}
+.botoContinuar:hover {
+    text-decoration: none;
+    color: #ffb45f;
+    background-color: white;
+    border-color: #ffb45f;
+    border: 1px solid;
+    font-size: 15px;
+}
+.botoEnrere:hover {
+    text-decoration: none;
+    color: #ffb45f;
+    background-color: white;
+    border-color: #ffb45f;
+    border: 1px solid;
+    font-size: 15px;
+}
+/*Modaal*/
+.modal-header {
+    background-color: #ffb45f;
+}
+.close {
+    float: right;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    color: #ffffff;
+    /* text-shadow: 0 1px 0 #fff; */
+    filter: alpha(opacity=20);
+    /* opacity: .2; */
+}
+
+/*Footer Font awesome*/
+.font-awesome {
+    color: #ffb45f;
+}
+a:focus, a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+h3 {
+    color:#ffffff;
+}
+
+
+/*navbar*/
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: #ffb45f;
+}
+.navbar-default {
+    background-color: #ffb45f;
+    border-color: #ffb45f;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #000000;
+}
+
+
+
+.btn-primary {
+    color: #fff;
+    background-color: #ffb45f;
+    border-color: #ffb45f;
+}
+
+/*#393E41*/

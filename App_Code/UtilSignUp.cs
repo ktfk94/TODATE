@@ -71,8 +71,7 @@ public class UtilSignUp
         }
         return concat;
     }
-
-
+  
     public static byte[] ReadToEnd(System.IO.Stream stream)
     {
         long originalPosition = 0;
