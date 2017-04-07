@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PagMestre.master" AutoEventWireup="true" CodeFile="Registre.aspx.cs" Inherits="Registre" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/PagMestre.master" AutoEventWireup="true" CodeFile="Registre.aspx.cs" Inherits="Registre" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
@@ -11,14 +11,12 @@
     
     <div>
       <h3>Registre</h3>
-
     </div>
 
     <div class="panel panel-primary" id="PanelBarraProgres" runat="server">
         <!-- COM POSAR UNA BARRA DE PROGRÉS 3.3 -->
         <div class="panel-heading"></div>
-        <div class="panel-body">
-        </div>
+        <div class="panel-body"></div>
     </div>
 
     <div class="panel panel-primary" id="PanelMissatges" runat="server">
@@ -113,7 +111,7 @@
                     Text="Volem saber més coses sobre tu per a poder crear un perfil complet. Primer de tot, necessitarem una fotografía teva que servirà com a fotografía
                      de perfil. La pots canviar en qualsevol moment des del perfil. Si vols en pots introduïr més d'una."></asp:Label>
                 <!-- COM POSAR UNA FOTUUUUUUUU -->
-                <br /><asp:Image ID="ImagePerfil" CssClass="pujarImgPerfil" runat="server" />
+              <br /><asp:Image ID="ImagePerfil" CssClass="pujarImgPerfil" runat="server" />
             </div>
             <div class="form-group" id="fotu">
                 <asp:FileUpload ID="FileUpload1" runat="server" AllowMultiple="False" />
@@ -445,9 +443,4 @@
         </div>
     </asp:Panel>
     <!--FI MODAL-->
-
 </asp:Content>
-
-
-
-

@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="PagMestre.master.cs" Inherits="PagMestre" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="PagMestre.master.cs" Inherits="PagMestre" %>
 
 <!DOCTYPE html>
 
