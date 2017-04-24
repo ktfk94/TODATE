@@ -225,7 +225,7 @@ public partial class Registre : System.Web.UI.Page
         user.sex = SeleccioSexe();
         user.sexWanted = SeleccioSexeBuscat();
         user.shape = TextBoxFigura.Text;
-        user.sports = TextBoxEsports.Text;
+        //user.sports[0] = TextBoxEsports.Text;
         user.tastes = Utils.selectedIndexesOfCheckBoxList(CheckListGustos);
         user.typeOfHair = TextBoxCabell.Text;
         user.ubication = "Falta omplir";
@@ -234,8 +234,19 @@ public partial class Registre : System.Web.UI.Page
         user.birthplace = TextBoxOrigen.Text;
         user.birthdate = Encrypt.Encriptar(getBirthDate());
 
-        FMong.preUpload(user, tipo);
-        LabelFi.Text = "Benvingut a TODATE";
+        Busca busca = new Busca();
+
+        busca.colour = DropdownlistBuscarColor.Text;
+        busca.edat = Convert.ToInt32(DropdownlistEdatMax.Text) - Convert.ToInt32(DropdownlistEdatMin.Text);
+        busca.civilstatus = DropdownlistBuscarCivil.Text;
+        busca.iv = Utils.selectedIndexesOfCheckBoxList(CheckboxlistBuscarIV);
+        busca.sports = DropdownlistBuscarEsports.Text;
+        busca.tastes = Utils.selectedIndexesOfCheckBoxList(CheckboxlistBuscarGustos);
+        busca.typeOfHair = DropdownlistBuscarCabell.Text;
+        busca.shape = DropdownlistBuscarFigura.Text;
+        busca.sex = SeleccioSexeBuscat();
+        FMong.preUpload(user, busca);
+        Response.Redirect("PagPrincipalIniciat.aspx");
     }
 
     protected void LinkButtonEnrrere_Click(object sender, EventArgs e)
@@ -306,7 +317,7 @@ public partial class Registre : System.Web.UI.Page
 
     protected void LinkButtonAcceptar_Click(object sender, EventArgs e)
     {
-       if(FMong.preUploadSelect(TextBoxDadesNom.Text, TextBoxDadesContra.Text))
+       if(FMong.preSelect(TextBoxDadesNom.Text, TextBoxDadesContra.Text))
         {
             //codi per anar a la seguent pagina
         }

@@ -9,6 +9,10 @@ public partial class MasterPageIniciat : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        /*Usuari user = new Usuari();
+        user = FMong.SelectUser(Session["mail"] as string);
 
+        ImageNavPerfil.Src = "data:image/png;base64," + Convert.ToBase64String(user.img);
+        LabelNomUsuari.Text = user.name;*/
     }
 }

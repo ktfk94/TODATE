@@ -23,19 +23,19 @@
     <!--INICI MODAL-->
         <div class="modal fade" id="ModalLogIn" role="dialog">
             <div class="modal-dialog">
-                Modal content
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">Inicia Sessió</h4>
                     </div>
                     <div class="modal-body">
-                        <div class="form-group">
-                            <asp:Label ID="LabelDadesNom" CssClass="col-sm-2 control-label" runat="server" Text="Usuari"></asp:Label>
-                            <div class="col-sm-10">
-                                <asp:TextBox ID="TextBoxDadesNom" CssClass="form-control" runat="server"></asp:TextBox>
+                        <div class="form-group" >
+                            <asp:Label ID="LabelDadesNom" CssClass="col-sm-2 control-label" style="margin-bottom:20px;" runat="server" Text="Usuari"></asp:Label>
+                            <div class="col-sm-10" >
+                                <asp:TextBox ID="TextBoxDadesNom" style="margin-bottom:20px;" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                         </div>
+                        
                         <div class="form-group">
                             <asp:Label ID="LabelDadesContrasenya" CssClass="col-sm-2 control-label" runat="server" Text="Contrasenya"></asp:Label>
                             <div class="col-sm-10">

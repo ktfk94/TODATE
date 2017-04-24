@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="PagMestre.master.cs" Inherits="PagMestre" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="PagMestre.master.cs" Inherits="PagMestre" %>
 
 <!DOCTYPE html>
 
@@ -26,7 +26,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="Home.aspx">
                     <img id="imgLogo" src="imatges/logo.PNG" alt="" />
                 </a>
 
@@ -35,11 +35,11 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="nav navbar-nav">
-                    <li><a href="Home.aspx">TODATE</a></li>
+                    <li><a href="Home.aspx" style="font-size: 20px;">TODATE</a></li>
                 </ul>
                 <ul class="nav navbar-nav  navbar-right">
                     <li><a data-toggle="modal" data-target="#ModalLogIn"><span class="glyphicon glyphicon-log-in"></span>&nbsp Iniciar Sessió</a></li>
-                    <li><a href="Registre.aspx"><span class="glyphicon glyphicon-user"></span>Registre</a></li>
+                    <li><a href="Registre.aspx"><span class="glyphicon glyphicon-user"></span>&nbsp Registre</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -56,15 +56,13 @@
         </div>
     </form>
 
-    <footer>
+    <footer  style="width:100%" >
         <div class="text-center center-block">
-            <a href="#"><i class="fa fa-facebook-square fa-3x social"></i></a>
-            <a href="#"><i class="fa fa-twitter-square fa-3x social"></i></a>
-            <a href="#"><i class="fa fa-google-plus-square fa-3x social"></i></a>
-            <a href="#"><i class="fa fa-envelope-square fa-3x social"></i></a>
-        </div>
-        <div>
-            <h4 class="text-center copyright">© Copyright Todate 2017</h4>
+            <a class="font-awesome" href="#"><i class="fa fa-facebook-square  social fa-2x "></i></a>
+            <a class="font-awesome" href="#"><i class="fa fa-twitter-square  social fa-2x "></i></a>
+            <a class="font-awesome" href="#"><i class="fa fa-google-plus-square  social fa-2x "></i></a>
+            <a class="font-awesome" href="#"><i class="fa fa-envelope-square  social fa-2x "></i></a>
+            <span style="color:#ffb45f">&nbsp© Copyright Todate 2017</span>
         </div>
     </footer>
 

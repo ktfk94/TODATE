@@ -1,24 +1,25 @@
 <%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageIniciat.master" AutoEventWireup="true" CodeFile="PerfilModificarDades.aspx.cs" Inherits="PerfilModificarDades" %>
 
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
     <div class="container-fluid">
         <div class="row">
-            <h2 style="text-align: center">Dades de Perfil</h2>
+            <h2 style="text-align: center">Modificar les dades de Perfil</h2>
             <br />
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-3">
-                        <img class="imatgeperfil" src="Imatges/prova img face.jpg" />
+                        <img class="imatgeperfil" runat="server" src="Imatges/prova img face.jpg" id="ImgPerfil" />
                     </div>
                     <div class="col-md-4">
                         <div class="col-md-10">
                             <p>Nom: <asp:TextBox ID="TextBoxNom" runat="server"/></p>
-                            <p>Edat: <asp:TextBox ID="TextBoxEdat" runat="server"/></p>
-                            <p>Data registre: <asp:TextBox ID="TextBoxData" runat="server"/></p>
-                            <p>Correu electrònic: <asp:TextBox ID="TextBoxCorreu" runat="server"/></p>
+                            <p>Edat: <asp:Label ID="LabelEdat" runat="server"></asp:Label></p>
+                            <p>Data registre: <asp:Label ID="LabelData" runat="server"></asp:Label></p>
+                            <p>Correu electrònic: <asp:Label ID="LabelMail" runat="server"></asp:Label></p>
                             <br />
                         </div>
 
@@ -61,7 +62,7 @@
                         </div>
                     </div>
                     <div class="col-md-1">
-                        <asp:Button ID="ButtonCanviarDades" runat="server" Text="CanviarDades" />
+                        <asp:Button ID="ButtonCanviarDades" runat="server" Text="Guardar dades" OnClick="ButtonCanviarDades_Click" UseSubmitBehavior="False"/>
                     </div>
                 </div>
             </div>

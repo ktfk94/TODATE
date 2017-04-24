@@ -1,12 +1,16 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PagMestre.master" AutoEventWireup="true" CodeFile="Registre.aspx.cs" Inherits="Registre" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/PagMestre.master" AutoEventWireup="true" CodeFile="Registre.aspx.cs" Inherits="Registre" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <div class="panel panel-primary" id="titol" runat="server">
-        <div class="panel-heading">
-            <h3>Registre</h3>
-        </div>
+
+    <div>
+        <h3 style="text-align:center">Pas <span>1</span> de 4</h3>
+        <progress id="BarraProgres" max="100" value="25"></progress>
+    </div>
+    
+    <div>
+      <h3>Registre</h3>
     </div>
 
     <div class="panel panel-primary" id="PanelBarraProgres" runat="server">
@@ -70,7 +74,7 @@
             </div>
             <div class="form-group" id="correu">
                 <asp:Label ID="LabelCorreu" CssClass="col-sm-2 control-label" runat="server" Text="Correu electrònic"></asp:Label>
-                <div class="col-sm-10">
+                <div style="margin-bottom:10px;" class="col-sm-10">
                     <asp:TextBox ID="TextBoxCorreu" CssClass="form-control" runat="server" TextMode="Email"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidatorCorreu" CssClass="alert-danger label-danger label" runat="server"
                         ErrorMessage="El correu és necessari!" ControlToValidate="TextBoxCorreu" Display="Dynamic"></asp:RequiredFieldValidator>
@@ -78,13 +82,13 @@
             </div>
             <div class="form-group" id="contra">
                 <asp:Label ID="LabelContra" CssClass="col-sm-2 control-label" runat="server" Text="Contrasenya"></asp:Label>
-                <div class="col-sm-10">
+                <div  style="margin-bottom:10px;" class="col-sm-10">
                     <asp:TextBox ID="TextBoxContra" CssClass="form-control" runat="server" TextMode="Password"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidatorContra" CssClass="alert-danger label-danger label" runat="server"
                         ErrorMessage="La contrasenya és necessaria!" ControlToValidate="TextBoxContra" Display="Dynamic"></asp:RequiredFieldValidator>
                 </div>
             </div>
-            <div class="form-group" id="conf">
+            <div style="margin-bottom:10px;" class="form-group" id="conf">
                 <asp:Label ID="LabelConf" CssClass="col-sm-2 control-label" runat="server" Text="Confirmar la contrasenya"></asp:Label>
                 <div class="col-sm-10">
                     <asp:TextBox ID="TextBoxConf" CssClass="form-control" runat="server" TextMode="Password"></asp:TextBox>
@@ -107,11 +111,11 @@
                     Text="Volem saber més coses sobre tu per a poder crear un perfil complet. Primer de tot, necessitarem una fotografía teva que servirà com a fotografía
                      de perfil. La pots canviar en qualsevol moment des del perfil. Si vols en pots introduïr més d'una."></asp:Label>
                 <!-- COM POSAR UNA FOTUUUUUUUU -->
-                <asp:Image ID="ImagePerfil" CssClass="pujarImgPerfil" runat="server" />
+              <br /><asp:Image ID="ImagePerfil" CssClass="pujarImgPerfil" runat="server" />
             </div>
             <div class="form-group" id="fotu">
                 <asp:FileUpload ID="FileUpload1" runat="server" AllowMultiple="False" />
-                <asp:Button ID="ButtonPujar" runat="server" Text="Pujar" OnClick="ButtonPujar_Click" />
+                <br /><asp:Button ID="ButtonPujar" runat="server" Text="Pujar" OnClick="ButtonPujar_Click" BackColor="#FFB45F" BorderColor="#FFB45F" ForeColor="White" />
             </div>
         </div>
     </div>
@@ -274,7 +278,7 @@
         <div class="panel-body">
             <div class="form-group">
                 <asp:Label ID="LabelTipusRel" CssClass="col-sm-2 control-label" runat="server" Text="Tipus de relació"></asp:Label>
-                <asp:DropDownList ID="DropdownlistRelació" runat="server">
+                <asp:DropDownList ID="DropdownlistRelacio" runat="server">
                     <asp:ListItem>-</asp:ListItem>
                     <asp:ListItem>Buscar parella</asp:ListItem>
                     <asp:ListItem>Aventura</asp:ListItem>
@@ -384,13 +388,14 @@
         <div class="panel-body">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-6">
-                        <asp:LinkButton ID="LinkButtonEnrrere" runat="server" OnClick="LinkButtonEnrrere_Click" CausesValidation="False">Enrrere</asp:LinkButton>
-                    </div>
-                    <div class="col-md-6" id="butoContinuarRegistre">
+                    <div class="col-md-12 text-right">
+                        <asp:LinkButton ID="LinkButtonEnrrere" CssClass="botoEnrere align-right" runat="server" OnClick="LinkButtonEnrrere_Click" CausesValidation="False">Enrrere</asp:LinkButton>
                         <asp:Label ID="LabelFi" CssClass="label label-warning" runat="server" Text=""></asp:Label>
-                        <asp:LinkButton ID="LinkButtonContinuar" runat="server" OnClick="LinkButtonContinuar_Click">Continuar</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButtonContinuar" runat="server" OnClick="LinkButtonContinuar_Click" CssClass="botoContinuar" ClientIDMode="Static">Continuar</asp:LinkButton>
                     </div>
+                    <!--<div class="col-md-1" id="butoContinuarRegistre">
+                        
+                    </div>-->
                 </div>
             </div>
         </div>
