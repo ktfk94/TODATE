@@ -27,16 +27,13 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="Home.aspx">
-                    <img id="imgLogo" src="imatges/logo.PNG" alt="" />
+                    <img class="img img-responsive"  id="imgLogo" src="imatges/logo.PNG" alt="" />
                 </a>
 
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="menu">
-                <ul class="nav navbar-nav">
-                    <li><a href="Home.aspx" style="font-size: 20px;">TODATE</a></li>
-                </ul>
                 <ul class="nav navbar-nav  navbar-right">
                     <li><a data-toggle="modal" data-target="#ModalLogIn"><span class="glyphicon glyphicon-log-in"></span>&nbsp Iniciar Sessió</a></li>
                     <li><a href="Registre.aspx"><span class="glyphicon glyphicon-user"></span>&nbsp Registre</a></li>
@@ -56,13 +53,31 @@
         </div>
     </form>
 
+
+
+
+    <div class="col-sm-12 contacte">
+        <div class="col-sm-4">
+            <h4 class="">CONTACTE</h4><br />
+            <p>hola@todate.com</p>
+            <p>93 626 77 44</p>
+            <p>C/ Catalunya 1</p>
+        </div>
+        <div class="col-sm-4"><hr class="bar"></div>
+        <div class="col-sm-4">
+            <h4 class="">Creadors</h4><br />
+            <p>Oriol Ferer</p>
+            <p>Sergi Sanchez</p>
+            <p>Pau Casals</p>
+        </div>
+    </div>
     <footer  style="width:100%" >
         <div class="text-center center-block">
             <a class="font-awesome" href="#"><i class="fa fa-facebook-square  social fa-2x "></i></a>
             <a class="font-awesome" href="#"><i class="fa fa-twitter-square  social fa-2x "></i></a>
             <a class="font-awesome" href="#"><i class="fa fa-google-plus-square  social fa-2x "></i></a>
             <a class="font-awesome" href="#"><i class="fa fa-envelope-square  social fa-2x "></i></a>
-            <span style="color:#ffb45f">&nbsp© Copyright Todate 2017</span>
+            <span style="color:#fff">&nbsp© Copyright Todate 2017</span>
         </div>
     </footer>
 

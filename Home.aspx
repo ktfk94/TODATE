@@ -12,13 +12,29 @@
         }
     </script>
 
-    <div class="form group">
-        <asp:Button ID="Button1" CssClass="btn btn-info btn-lg col-sm-offset-5 col-sm-2 buto" Visible="false" runat="server" Text="Comença" OnClick="Button1_Click" />
+    <section>
+        <div class="col-md-12">
+            <img class="img-responsive" src="Imatges/fons.jpg" />
+        </div>
+    </section>
+   
+        
+    <div class="col-md-12">
+         <div class="col-md-1"></div>
+         <div class="col-md-5 dreta">
+            <p>En TODATE encontramos <br /> a tu pareja ideal</p>      
+            <p style="font-size:25px; margin-top:30px;">Registrate i empieza a conocer gente</p>
+         </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-5 esquerra">
+              <p>8 de cada 10 personas <br /> encuentran su pareja ideal</p>
+              <p style="font-size:30px; margin-top:30px;">¿Quieres ser el siguiente?</p>
+          </div>     
     </div>
-    <div class ="col-sm-offset-4 col-sm-6">
-        <img class="img-responsive" src="Imatges/Sin título.png" alt="" />
-
-    </div>
+                
+    <!--<div class="img img-responsive col-md-12 collage">
+        <p class="text-collage">SI TIENES ALGUNA DUDA <br /> PREGUNTANOS LO QUE QUIERAS</p>
+    </div>-->
 
     <!--INICI MODAL-->
         <div class="modal fade" id="ModalLogIn" role="dialog">

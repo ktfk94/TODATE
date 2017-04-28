@@ -19,6 +19,8 @@ public partial class PagPrincipalIniciat : System.Web.UI.Page
         String nom = "Nom de la persona";
         String msg = "Missatge més recent de la persona";
         String hora = DateTime.Now.ToString();
+       
+
 
         HtmlGenericControl nouDiv = Utils.afegirXat(ruta, nom, msg, hora);
 

@@ -8,10 +8,7 @@
         <h3 style="text-align:center">Pas <span>1</span> de 4</h3>
         <progress id="BarraProgres" max="100" value="25"></progress>
     </div>
-    
-    <div>
-      <h3>Registre</h3>
-    </div>
+   
 
     <div class="panel panel-primary" id="PanelBarraProgres" runat="server">
         <!-- COM POSAR UNA BARRA DE PROGRÉS 3.3 -->
@@ -278,7 +275,7 @@
         <div class="panel-body">
             <div class="form-group">
                 <asp:Label ID="LabelTipusRel" CssClass="col-sm-2 control-label" runat="server" Text="Tipus de relació"></asp:Label>
-                <asp:DropDownList ID="DropdownlistRelació" runat="server">
+                <asp:DropDownList ID="DropdownlistRelacio" runat="server">
                     <asp:ListItem>-</asp:ListItem>
                     <asp:ListItem>Buscar parella</asp:ListItem>
                     <asp:ListItem>Aventura</asp:ListItem>

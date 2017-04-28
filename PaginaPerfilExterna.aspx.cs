@@ -15,12 +15,12 @@ public partial class PaginaPerfil : System.Web.UI.Page
         Usuari user = new Usuari();
 
         user = FMong.SelectUser(LabelCorreuMestre);
-        ImgPerfil.Src = "data:image/png;base64," + Convert.ToBase64String(user.img);
+        ImgPerfil.Src= "data:image/png;base64," + Convert.ToBase64String(user.img);
         LabelNom.Text = user.name;
         LabelCorreu.Text = user.mail;
         LabelData.Text = Convert.ToString(DateTime.Now);
         LabelEdat.Text = Encrypt.Desencriptar(user.birthdate.ToString());
-
+        
         LabelColor.Text = user.colour;
         LabelFigura.Text = user.shape;
         LabelCabell.Text = user.typeOfHair;

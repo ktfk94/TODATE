@@ -21,7 +21,7 @@ public partial class Home : System.Web.UI.Page
 
     protected void LinkButtonAcceptar_Click(object sender, EventArgs e)
     {
-        if (FMong.preUploadSelect(TextBoxDadesNom.Text,TextBoxDadesContra.Text))
+        if (FMong.preSelect(TextBoxDadesNom.Text,TextBoxDadesContra.Text))
         {
             Session["mail"] = TextBoxDadesNom.Text;
             
