@@ -1,6 +1,50 @@
-.buto {
-    margin-top:10%;
+.dreta {
+    background-color:#343e4c;
+    text-align:center;
+    color:#ffffff;
+    margin-top: 20px;
+    padding-top:40px;
+    margin:10px;
+    height:350px;
+    font-size:50px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-body {
-    margin-top:30px;
+
+.dreta:hover {
+    transition: all 0.4s ease-in-out;
 }
+
+
+.esquerra {
+
+    background-color:#343e4c;
+    margin:10px;
+    text-align:center;
+    color:#ffffff;
+    padding-top:40px;
+    height:350px;
+    font-size:50px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    
+}
+
+.col-md-12{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.collage {
+    background-image:url(/Imatges/collage.jpg);
+    background-repeat:no-repeat;
+    height:1000px;
+}
+
+.text-collage{
+    padding-top:100px;
+    font-size:70px;
+    color:#343e4c;
+    text-align:center;
+    font-style:bold;
+}
+/*background-image:url(/Imatges/fons.jpg)*/

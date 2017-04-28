@@ -4,20 +4,19 @@ footer {
     height: 50px;
     bottom: 0;
     width: 100%;
-    background-color: #51585c;
+    background-color: #343e4c;
     border: 1px solid;
-    border-top-color:#ffb45f;
     padding-left: 0px !important;
     
 }
 
 
 body {
-    padding-top: 100px;
+    /*padding-top: 100px;*/
     padding-bottom:200px;
     /*padding-left: 20px;*/
-    padding-right: 20px;
-    background-color:#F0F7F4;
+    /*padding-right: 20px;*/
+    background-color:#fff;
     /* possible color #393E41   #51585c*/ 
 }
 
@@ -52,9 +51,9 @@ body {
     padding-top: 10px !important;
 }
 
-.navbar-fixed-top .nav {
+/*.navbar-fixed-top .nav {
     padding: 15px 0;
-}
+}*/
 
 .navbar-fixed-top .navbar-brand {
     padding: 0 15px;
@@ -106,17 +105,12 @@ body {
 
 .navbar-brand>img {
     display: block;
-
-    max-width: 80px;
-}
-/*imatges footer*/
-.font-awesome {
-    color: #808080;
+    max-width: 10%;
 }
 
 /*Panels*/
 .panel-primary {
-    border-color: #9d9d9d;
+    border-color: #343e4c;
 }
 .panel {
     margin-bottom: 20px;
@@ -128,9 +122,9 @@ body {
     /* box-shadow: 0 1px 1px rgba(0,0,0,.05); */
 }
 .panel-primary>.panel-heading {
-    color: #080808;
-    background-color: #ffb45f;
-    border-color: #337ab7;
+    color: #fff;
+    background-color: #343e4c;
+    border-color: #343e4c;
 }
 .panel-heading {
     padding: 10px 15px;
@@ -179,7 +173,7 @@ progress::-webkit-progress-value {
 .botoContinuar {
     color: #ffffff;
     text-decoration: none;
-    background-color: #ffb45f;
+    background-color: #343e4c;
     padding: 5px;
     border-radius: 5px;
     text-decoration:none
@@ -187,16 +181,16 @@ progress::-webkit-progress-value {
 .botoEnrere {
     color: #ffffff;
     text-decoration: none;
-    background-color: #ffb45f;
+    background-color: #343e4c;
     padding: 5px;
     border-radius: 5px;
     text-decoration:none
 }
 .botoContinuar:hover {
     text-decoration: none;
-    color: #ffb45f;
+    color: #343e4c;
     background-color: white;
-    border-color: #ffb45f;
+    border-color: #343e4c;
     border: 1px solid;
     font-size: 15px;
 }
@@ -210,8 +204,12 @@ progress::-webkit-progress-value {
 }
 /*Modaal*/
 .modal-header {
-    background-color: #ffb45f;
+    background-color: #343e4c;
 }
+.modal-title {
+    color:#fff;
+}
+
 .close {
     float: right;
     font-size: 21px;
@@ -225,7 +223,7 @@ progress::-webkit-progress-value {
 
 /*Footer Font awesome*/
 .font-awesome {
-    color: #ffb45f;
+    color: #ffffff;
 }
 a:focus, a:hover {
     color: #ffffff;
@@ -256,5 +254,23 @@ h3 {
     background-color: #ffb45f;
     border-color: #ffb45f;
 }
+    div#ContentPlaceHolder1_PanelInici,div#ContentPlaceHolder1_BotoContinuar,div#ContentPlaceHolder1_PanelBenvinguda,
+    div#ContentPlaceHolder1_PanelDadesNecessaries,div#ContentPlaceHolder1_PanelDadesPersonals,div#ContentPlaceHolder1_PanelOpcionsRelacio   {
+        margin-left:20px;
+        margin-right:20px;
+}
 
 /*#393E41*/
+
+
+.contacte {
+    text-align:center;
+    color:#343e4c;
+    padding:15px;
+    height:250px;
+}
+
+.dadescontacte {
+    color:#343e4c;
+    
+}
