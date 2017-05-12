@@ -11,7 +11,7 @@ public partial class PaginaPerfil : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        string LabelCorreuMestre = Session["mail"] as String;
+        /*string LabelCorreuMestre = Session["mail"] as String;
         Usuari user = new Usuari();
 
         user = FMong.SelectUser(LabelCorreuMestre);
@@ -30,7 +30,7 @@ public partial class PaginaPerfil : System.Web.UI.Page
         String[] gustos = user.tastes;
         String[] IVs = user.iv;
 
-        ScriptManager.RegisterStartupScript(this, typeof(Page), "lel", "$(document).ready(function(){});", true);
+        ScriptManager.RegisterStartupScript(this, typeof(Page), "lel", "$(document).ready(function(){});", true);*/
     }
 
     protected void ButtonCanviarDades_Click(object sender, EventArgs e)

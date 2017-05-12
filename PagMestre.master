@@ -27,7 +27,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="Home.aspx">
-                    <img class="img img-responsive"  id="imgLogo" src="imatges/logo.PNG" alt="" />
+                    <img class="img img-responsive" id="imgLogo" src="imatges/logo.PNG" alt="" />
                 </a>
 
             </div>
@@ -71,7 +71,7 @@
             <p>Pau Casals</p>
         </div>
     </div>
-    <footer  style="width:100%" >
+    <footer style="width:100%" >
         <div class="text-center center-block">
             <a class="font-awesome" href="#"><i class="fa fa-facebook-square  social fa-2x "></i></a>
             <a class="font-awesome" href="#"><i class="fa fa-twitter-square  social fa-2x "></i></a>
