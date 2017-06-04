@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -29,6 +31,10 @@ public partial class Registre : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Request.UrlReferrer == null)
+        {
+            Response.Redirect("Home.aspx");
+        }
         if (!IsPostBack)
         {
             
@@ -38,7 +44,7 @@ public partial class Registre : System.Web.UI.Page
             contPanel = 0;
             OmplirAny();
             omplirDataRegistre(31, false);
-
+            omplirEdatBuscar();
 
         }
     }
@@ -47,7 +53,7 @@ public partial class Registre : System.Web.UI.Page
     {
         if (FileUpload1.HasFile)
         {
-            string extension = System.IO.Path.GetExtension(FileUpload1.FileName);
+            string extension = Path.GetExtension(FileUpload1.FileName);
             if (extension == ".jpg" || extension == ".png")
             {
 
@@ -192,6 +198,10 @@ public partial class Registre : System.Web.UI.Page
         {
             ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "La contrasenya ha de contenir 5 caràcters com a mínim!" + "');", true);
         }
+        else if (contPanel == 2 && ((DateTime.Today.Year - 18) < Int32.Parse(DropAny.SelectedValue)))
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Tens menys de 18 anys!" + "');", true);
+        }
         else
         {
             contPanel++;
@@ -214,7 +224,7 @@ public partial class Registre : System.Web.UI.Page
 
     protected void InsertReg()
     {
-        tipo = "Insert";
+        /*tipo = "Insert";
         
 
         user.name = TextBoxCognoms.Text + ", " + TextBoxNom.Text;
@@ -234,8 +244,25 @@ public partial class Registre : System.Web.UI.Page
         user.birthplace = TextBoxOrigen.Text;
         user.birthdate = Encrypt.Encriptar(getBirthDate());
 
-        FMong.preUpload(user, tipo);
-        LabelFi.Text = "Benvingut a TODATE";
+        Busca busca = new Busca();
+
+        busca.colour = DropdownlistBuscarColor.Text;
+        busca.edat = Convert.ToInt32(DropdownlistEdatMax.Text) - Convert.ToInt32(DropdownlistEdatMin.Text);
+        busca.civilstatus = DropdownlistBuscarCivil.Text;
+        busca.iv = Utils.selectedIndexesOfCheckBoxList(CheckboxlistBuscarIV);
+        busca.sports = DropdownlistBuscarEsports.Text;
+        busca.tastes = Utils.selectedIndexesOfCheckBoxList(CheckboxlistBuscarGustos);
+        busca.typeOfHair = DropdownlistBuscarCabell.Text;
+        busca.shape = DropdownlistBuscarFigura.Text;
+        busca.sex = SeleccioSexeBuscat();
+        */
+        //Enviar correu de verificació i rebre el codi
+        String activationCode = enviarMailConf();
+        //user.activatedAccount = false;
+        //user.activationCode = activationCode;
+        //FMong.preUpload(user, busca);
+
+        //Response.Redirect("PagPrincipalIniciat.aspx");
     }
 
     protected void LinkButtonEnrrere_Click(object sender, EventArgs e)
@@ -303,10 +330,25 @@ public partial class Registre : System.Web.UI.Page
         omplirDataRegistre(days, feb);
         
     }
+    protected void omplirEdatBuscar()
+    {
+        DropdownlistEdatMin.Items.Clear();
+
+        DropdownlistEdatMax.Items.Clear();
+        DropdownlistEdatMax.Items.Add("-");
+
+        int numInici = 18;
+        int numFi = 100;
+        for(int cont = numInici; cont < numFi; cont++)
+        {
+            DropdownlistEdatMin.Items.Add(cont.ToString());
+            DropdownlistEdatMax.Items.Add(cont.ToString());
+        }
+    }
 
     protected void LinkButtonAcceptar_Click(object sender, EventArgs e)
     {
-       if(FMong.preUploadSelect(TextBoxDadesNom.Text, TextBoxDadesContra.Text))
+       if(FMong.preSelect(TextBoxDadesNom.Text, TextBoxDadesContra.Text))
         {
             //codi per anar a la seguent pagina
         }
@@ -340,5 +382,62 @@ public partial class Registre : System.Web.UI.Page
         }
 
         TextBoxIV.Text = "";
+    }
+
+    protected void ButtonBuscarGustos_Click(object sender, EventArgs e)
+    {
+        ListItem item = new ListItem();
+        item.Text = TextBoxBuscarGustos.Text;
+
+        if (item.Text != null && item.Text != "")
+        {
+            CheckboxlistBuscarGustos.Items.Add(item);
+        }
+
+
+        TextBoxBuscarGustos.Text = "";
+    }
+
+    protected void ButtonBuscarIV_Click(object sender, EventArgs e)
+    {
+        ListItem item = new ListItem();
+        item.Text = TextBoxBuscarIV.Text;
+
+        if (item.Text != null && item.Text != "")
+        {
+            CheckboxlistBuscarIV.Items.Add(item);
+        }
+
+        TextBoxBuscarIV.Text = "";
+    }
+
+    protected String enviarMailConf()
+    {
+        String txtUsername = "Uri94";
+        String txtEmail = "ktfk94@gmail.com";
+        //Crear el codi d'activació
+        string activationCode = Guid.NewGuid().ToString();;
+
+        //Crear el mail d'activació
+        using (MailMessage mm = new MailMessage("projectetodate@gmail.com", txtEmail))
+        {
+            mm.Subject = "Activació del compte";
+            string body = "Hola " + txtUsername + ",";
+            body += "<br /><br />Siusplau, fes clic al següent link perr activar el teu compte de Todate";
+            body += "<br />Fes clic<a href = '" + Request.Url.AbsoluteUri.Replace("Registre.aspx", "PagActivacio.aspx?ActivationCode=" + activationCode) + "'> AQUI </a>per activar el teu compte.";
+            body += "<br /><br />Gràcies";
+            mm.Body = body;
+            mm.IsBodyHtml = true;
+            SmtpClient smtp = new SmtpClient();
+            smtp.Host = "smtp.gmail.com";
+            smtp.EnableSsl = true;
+            NetworkCredential NetworkCred = new NetworkCredential("projectetodate@gmail.com", "TodateInformatica");
+            smtp.UseDefaultCredentials = true;
+            smtp.Credentials = NetworkCred;
+            smtp.Port = 587;
+            smtp.Send(mm);
+        }
+        //ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + "S'ha enviat un mail de confirmació al teu correu!" + "');", true);
+        return activationCode;
     }
 }

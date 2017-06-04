@@ -42,7 +42,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="PaginaPerfil.aspx"><span class="glyphicon glyphicon-user"></span >Perfil</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="Home.aspx"><span class="glyphicon glyphicon-log-in"></span> Tancar Sessió</a></li>
+                            <li><a href="Home.aspx"><span class="glyphicon glyphicon-log-in"></span> Tancar Sessi&oacute</a></li>
                         </ul>
                     </li>
                 </ul>

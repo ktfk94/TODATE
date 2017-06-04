@@ -40,7 +40,7 @@ public partial class PerfilModificarDades : System.Web.UI.Page
         user.shape = TextBoxFigura.Text;
         user.typeOfHair = TextBoxCabell.Text;
         user.civilstatus = TextBoxCivil.Text;
-        FMong.preUpload(user, "Update");
+        //FMong.preUpload(user, "Update");
 
         Response.Redirect("PaginaPerfil.aspx");
     }

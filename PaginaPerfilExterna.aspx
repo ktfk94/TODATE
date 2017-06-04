@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageIniciat.master" AutoEventWireup="true" CodeFile="PaginaPerfil.aspx.cs" Inherits="PaginaPerfil" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageIniciat.master" AutoEventWireup="true" CodeFile="PaginaPerfilExterna.aspx.cs" Inherits="PaginaPerfil" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -32,7 +32,7 @@
                     <div class="col-md-3">
                         <div class="col-md-10">
                             <p>Color preferit: <asp:Label ID="LabelColor" runat="server" Text=""></asp:Label></p>
-                            <p>Complexió: <asp:Label ID="LabelFigura" runat="server" Text=""></asp:Label> </p>
+                            <p>Figura: <asp:Label ID="LabelFigura" runat="server" Text=""></asp:Label> </p>
                             <p>Tipus de cabell:  <asp:Label ID="LabelCabell" runat="server" Text=""></asp:Label></p>
                             <p>Estat civil: <asp:Label ID="LabelCivil" runat="server" Text=""></asp:Label></p>
                             <p>Fumador: <asp:Label ID="LabelFumar" runat="server" Text=""></asp:Label></p>

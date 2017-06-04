@@ -21,7 +21,7 @@
                 <div id="espaiXats" class="container-fluid table-bordered col-md-8" runat="server">
                     <div class="row table-bordered">
                         <div class="col-md-2">
-                            <img class="img-rounded img-responsive imatgeXats" alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/" />
+                            <img class="img-rounded img-responsive imatgeXats" alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/" onclick="" />
                         </div>
                         <div class="col-md-9">
                             <h3>Persona de prova</h3>

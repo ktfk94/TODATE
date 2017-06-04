@@ -25,14 +25,14 @@
 
     <div class="panel panel-primary" id="PanelInici" runat="server">
         <div class="panel-heading">
-            <asp:Label ID="LabelQuiQueTitol" CssClass="control-label" runat="server" Text="Quí soc i què busco?"></asp:Label>
+            <asp:Label ID="LabelQuiQueTitol" CssClass="control-label" runat="server" Text="Qu&iacute soc i qu&egrave busco?"></asp:Label>
         </div>
         <div class="panel-body">
             <div class="form-group" id="quiQue">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-5">
-                            <h4>Qui soc?</h4>
+                            <h4>Qu&iacute soc?</h4>
                             <div class="row">
                                 <div class="col-md-4">
                                     <asp:Image ID="ImageSocHome" CssClass="imgRegistre" runat="server" ImageUrl="~/Imatges/simbol_home.png" ToolTip="Soc home"></asp:Image>
@@ -49,7 +49,7 @@
                             </div>
                         </div>
                         <div class="col-md-7">
-                            <h4>Què busco?</h4>
+                            <h4>Qu&egrave busco?</h4>
                             <div class="row">
                                 <div class="col-md-3">
                                     <asp:Image ID="ImageBuscoHome" CssClass="imgRegistre" runat="server" ImageUrl="~/Imatges/simbol_home.png" ToolTip="Busco home"></asp:Image>
@@ -73,11 +73,11 @@
                 </div>
             </div>
             <div class="form-group" id="correu">
-                <asp:Label ID="LabelCorreu" CssClass="col-sm-2 control-label" runat="server" Text="Correu electrònic"></asp:Label>
+                <asp:Label ID="LabelCorreu" CssClass="col-sm-2 control-label" runat="server" Text="Correu electr&ogravenic"></asp:Label>
                 <div style="margin-bottom:10px;" class="col-sm-10">
                     <asp:TextBox ID="TextBoxCorreu" CssClass="form-control" runat="server" TextMode="Email"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidatorCorreu" CssClass="alert-danger label-danger label" runat="server"
-                        ErrorMessage="El correu és necessari!" ControlToValidate="TextBoxCorreu" Display="Dynamic"></asp:RequiredFieldValidator>
+                        ErrorMessage="El correu &eacutes necessari!" ControlToValidate="TextBoxCorreu" Display="Dynamic"></asp:RequiredFieldValidator>
                 </div>
             </div>
             <div class="form-group" id="contra">
@@ -85,7 +85,7 @@
                 <div  style="margin-bottom:10px;" class="col-sm-10">
                     <asp:TextBox ID="TextBoxContra" CssClass="form-control" runat="server" TextMode="Password"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidatorContra" CssClass="alert-danger label-danger label" runat="server"
-                        ErrorMessage="La contrasenya és necessaria!" ControlToValidate="TextBoxContra" Display="Dynamic"></asp:RequiredFieldValidator>
+                        ErrorMessage="La contrasenya &eacutes necessaria!" ControlToValidate="TextBoxContra" Display="Dynamic"></asp:RequiredFieldValidator>
                 </div>
             </div>
             <div style="margin-bottom:10px;" class="form-group" id="conf">
@@ -93,8 +93,8 @@
                 <div class="col-sm-10">
                     <asp:TextBox ID="TextBoxConf" CssClass="form-control" runat="server" TextMode="Password"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidatorConf" CssClass="alert-danger label-danger label" runat="server"
-                        ErrorMessage="La confirmació de la contrasenya és necessaria!" ControlToValidate="TextBoxConf" Display="Dynamic"></asp:RequiredFieldValidator>
-                    <asp:CompareValidator ID="CompareValidatorConf" runat="server" ErrorMessage="Les contrasenyes no són iguals!" Display="Dynamic"
+                        ErrorMessage="La confirmació de la contrasenya &eacutes necessaria!" ControlToValidate="TextBoxConf" Display="Dynamic"></asp:RequiredFieldValidator>
+                    <asp:CompareValidator ID="CompareValidatorConf" runat="server" CssClass="alert-danger label-danger label" ErrorMessage="Les contrasenyes no s&oacuten iguals!" Display="Dynamic"
                         ControlToCompare="TextBoxContra" ControlToValidate="TextBoxConf"></asp:CompareValidator>
                 </div>
             </div>
@@ -108,8 +108,8 @@
         <div class="panel-body">
             <div class="form-group">
                 <asp:Label ID="LabelInfo" runat="server" CssClass="col-sm-offset-1 col-sm-9 control-label text-center"
-                    Text="Volem saber més coses sobre tu per a poder crear un perfil complet. Primer de tot, necessitarem una fotografía teva que servirà com a fotografía
-                     de perfil. La pots canviar en qualsevol moment des del perfil. Si vols en pots introduïr més d'una."></asp:Label>
+                    Text="Volem saber m&eacutes coses sobre tu per poder crear un perfil complet. Primer de tot, necessitarem una fotograf&iacutea teva que servir&agrave com a fotograf&iacutea
+                     de perfil. La pots canviar en qualsevol moment des del perfil. Si vols en pots introdu&iumlr m&eacutes d'una."></asp:Label>
                 <!-- COM POSAR UNA FOTUUUUUUUU -->
               <br /><asp:Image ID="ImagePerfil" CssClass="pujarImgPerfil" runat="server" />
             </div>
@@ -130,7 +130,7 @@
                 <div class="col-sm-10">
                     <asp:TextBox ID="TextBoxNom" CssClass="form-control" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidatorNom" CssClass="alert-danger label-danger label" runat="server"
-                        ErrorMessage="El nom és necessari!" ControlToValidate="TextBoxNom" Display="Dynamic"></asp:RequiredFieldValidator>
+                        ErrorMessage="El nom &eacutes necessari!" ControlToValidate="TextBoxNom" Display="Dynamic"></asp:RequiredFieldValidator>
                 </div>
             </div>
             <div class="form-group">
@@ -138,7 +138,7 @@
                 <div class="col-sm-10">
                     <asp:TextBox ID="TextBoxCognoms" CssClass="form-control" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidatorCognoms" CssClass="alert-danger label-danger label" runat="server"
-                        ErrorMessage="Els cognoms són necessaris!" ControlToValidate="TextBoxCognoms" Display="Dynamic"></asp:RequiredFieldValidator>
+                        ErrorMessage="Els cognoms s&oacuten necessaris!" ControlToValidate="TextBoxCognoms" Display="Dynamic"></asp:RequiredFieldValidator>
                 </div>
             </div>
             <div class="form-group" id="dataNaix">
@@ -196,6 +196,7 @@
                     <asp:ListItem>Taronja</asp:ListItem>
                     <asp:ListItem>Verd</asp:ListItem>
                     <asp:ListItem>Rosa</asp:ListItem>
+                    <asp:ListItem>Altres</asp:ListItem>
                 </asp:DropDownList>
             </div>
             <div class="form-group">
@@ -203,7 +204,22 @@
                 <asp:textbox id="TextBoxCabell" runat="server"></asp:textbox>
             </div>
             <div class="form-group">
-                <asp:Label ID="LabelFigura" CssClass="col-sm-2 control-label" runat="server" Text="Figura"></asp:Label>
+                <asp:Label ID="LabelCabellColor" CssClass="col-sm-2 control-label" runat="server" Text="Color del cabell"></asp:Label>
+                <asp:DropDownList ID="DropdownlistCabellColor" runat="server">
+                    <asp:ListItem>-</asp:ListItem>
+                    <asp:ListItem>Blanc</asp:ListItem>
+                    <asp:ListItem>Negre</asp:ListItem>
+                    <asp:ListItem>Vermell</asp:ListItem>
+                    <asp:ListItem>Groc</asp:ListItem>
+                    <asp:ListItem>Blau</asp:ListItem>
+                    <asp:ListItem>Taronja</asp:ListItem>
+                    <asp:ListItem>Verd</asp:ListItem>
+                    <asp:ListItem>Rosa</asp:ListItem>
+                    <asp:ListItem>Altres</asp:ListItem>
+                </asp:DropDownList>
+            </div>
+            <div class="form-group">
+                <asp:Label ID="LabelFigura" CssClass="col-sm-2 control-label" runat="server" Text="Complexió"></asp:Label>
                 <asp:textbox id="TextBoxFigura" runat="server"></asp:textbox>
             </div>
             <div class="form-group">
@@ -282,20 +298,15 @@
                     <asp:ListItem>-</asp:ListItem>
                     <asp:ListItem>Buscar parella</asp:ListItem>
                     <asp:ListItem>Aventura</asp:ListItem>
+                    <asp:ListItem>Altres</asp:ListItem>
                 </asp:DropDownList>
             </div>
             <div class="form-group">
                 <asp:Label ID="LabelBuscarEdat" CssClass="col-sm-2 control-label" runat="server" Text="Quina edat aproximada busques en una relació?"></asp:Label>
                 <asp:Label ID="LabelMin" runat="server" Text="Min"></asp:Label>
-                <asp:DropDownList ID="DropdownlistEdatMin" runat="server">
-                    <asp:ListItem>-</asp:ListItem>
-                    <asp:ListItem>18</asp:ListItem>
-                </asp:DropDownList>
+                <asp:DropDownList ID="DropdownlistEdatMin" runat="server"></asp:DropDownList>
                 <asp:Label ID="LabelMax" runat="server" Text="Max"></asp:Label>
-                <asp:DropDownList ID="DropdownlistEdatMax" runat="server">
-                    <asp:ListItem>-</asp:ListItem>
-                    <asp:ListItem>100s</asp:ListItem>
-                </asp:DropDownList>
+                <asp:DropDownList ID="DropdownlistEdatMax" runat="server"></asp:DropDownList>
             </div>
             <div class="form-group-pers">
                 <asp:Label ID="LabelBuscarColor" CssClass="col-sm-2 control-label" runat="server" Text="Color preferit"></asp:Label>
@@ -303,6 +314,13 @@
                     <asp:ListItem>-</asp:ListItem>
                     <asp:ListItem>Blanc</asp:ListItem>
                     <asp:ListItem>Negre</asp:ListItem>
+                    <asp:ListItem>Vermell</asp:ListItem>
+                    <asp:ListItem>Groc</asp:ListItem>
+                    <asp:ListItem>Blau</asp:ListItem>
+                    <asp:ListItem>Taronja</asp:ListItem>
+                    <asp:ListItem>Verd</asp:ListItem>
+                    <asp:ListItem>Rosa</asp:ListItem>
+                    <asp:ListItem>Altres</asp:ListItem>
                 </asp:DropDownList>
             </div>
             <div class="form-group">
@@ -314,7 +332,22 @@
                 </asp:DropDownList>
             </div>
             <div class="form-group">
-                <asp:Label ID="LabelBuscarFigura" CssClass="col-sm-2 control-label" runat="server" Text="Figura"></asp:Label>
+                <asp:Label ID="LabelBuscarColorC" CssClass="col-sm-2 control-label" runat="server" Text="Color del cabell"></asp:Label>
+                <asp:DropDownList ID="DropdownlistBuscarColorC" runat="server">
+                    <asp:ListItem>-</asp:ListItem>
+                    <asp:ListItem>Blanc</asp:ListItem>
+                    <asp:ListItem>Negre</asp:ListItem>
+                    <asp:ListItem>Vermell</asp:ListItem>
+                    <asp:ListItem>Groc</asp:ListItem>
+                    <asp:ListItem>Blau</asp:ListItem>
+                    <asp:ListItem>Taronja</asp:ListItem>
+                    <asp:ListItem>Verd</asp:ListItem>
+                    <asp:ListItem>Rosa</asp:ListItem>
+                    <asp:ListItem>Altres</asp:ListItem>
+                </asp:DropDownList>
+            </div>
+            <div class="form-group">
+                <asp:Label ID="LabelBuscarFigura" CssClass="col-sm-2 control-label" runat="server" Text="Complexió"></asp:Label>
                 <asp:DropDownList ID="DropdownlistBuscarFigura" runat="server">
                     <asp:ListItem>-</asp:ListItem>
                     <asp:ListItem>Esvelta</asp:ListItem>
@@ -322,34 +355,9 @@
                 </asp:DropDownList>
             </div>
             <div class="form-group">
-                <asp:Label ID="LabelBuscarCivil" CssClass="col-sm-2 control-label" runat="server" Text="Estat civil"></asp:Label>
-                <asp:DropDownList ID="DropdownlistBuscarCivil" runat="server">
-                    <asp:ListItem>-</asp:ListItem>
-                    <asp:ListItem>Solter/a</asp:ListItem>
-                </asp:DropDownList>
-            </div>
-            <div class="form-group">
-                <asp:Label ID="LabelBuscarFills" CssClass="col-sm-2 control-label" runat="server" Text="Que tingui fills?"></asp:Label>
-                <asp:RadioButton ID="RadiobuttonBuscarFillsSi" runat="server" GroupName="BuscoFills" Text="Si"></asp:RadioButton>
-                <asp:RadioButton ID="RadiobuttonBuscarFillsNo" runat="server" GroupName="BuscoFills" Text="No"></asp:RadioButton>
-            </div>
-            <div class="form-group">
-                <asp:Label ID="LabelFumador" CssClass="col-sm-2 control-label" runat="server" Text="T'importa que sigui fumador?"></asp:Label>
-                <asp:RadioButton ID="RadiobuttonBuscoFumarSi" runat="server" GroupName="BuscoFumador" Text="Si"></asp:RadioButton>
-                <asp:RadioButton ID="RadiobuttonBuscoFumarNo" runat="server" GroupName="BuscoFumador" Text="No"></asp:RadioButton>
-            </div>
-            <div class="form-group">
-                <asp:Label ID="LabelBuscarEsports" CssClass="col-sm-2 control-label" runat="server" Text="Quin esport vols que faci?"></asp:Label>
-                <asp:DropDownList ID="DropdownlistBuscarEsports" runat="server">
-                    <asp:ListItem>-</asp:ListItem>
-                    <asp:ListItem>Que no faci esport</asp:ListItem>
-                    <asp:ListItem>Bàsquet</asp:ListItem>
-                    <asp:ListItem>Fútbol</asp:ListItem>
-                    <asp:ListItem>Tennis</asp:ListItem>
-                </asp:DropDownList>
-            </div>
-            <div class="form-group">
                 <asp:Label ID="LabelBuscarGustos" CssClass="col-sm-2 control-label" runat="server" Text="Quins gustos vols que tingui?"></asp:Label>
+                <asp:textbox id="TextBoxBuscarGustos" runat="server"></asp:textbox>
+                <asp:button id="ButtonBuscarGustos" runat="server" text="Afegir" CausesValidation="False" OnClick="ButtonBuscarGustos_Click" />
                 <asp:CheckBoxList ID="CheckboxlistBuscarGustos" runat="server" CellPadding="1" CellSpacing="1" RepeatColumns="9" BorderStyle="Solid" BorderWidth="1px">
                     <asp:ListItem>Caminar</asp:ListItem>
                     <asp:ListItem>Musica</asp:ListItem>
@@ -373,7 +381,47 @@
                 </asp:CheckBoxList>
             </div>
             <div class="form-group">
-                <asp:Label ID="LabelBuscarIV" CssClass="col-sm-2 control-label" runat="server" Text="Imperfeccions i virtuts?"></asp:Label>
+                <asp:Label ID="LabelBuscarEsports" CssClass="col-sm-2 control-label" runat="server" Text="Quin esport vols que faci?"></asp:Label>
+                <asp:DropDownList ID="DropdownlistBuscarEsports" runat="server">
+                    <asp:ListItem>-</asp:ListItem>
+                    <asp:ListItem>Que no faci esport</asp:ListItem>
+                    <asp:ListItem>Bàsquet</asp:ListItem>
+                    <asp:ListItem>Fútbol</asp:ListItem>
+                    <asp:ListItem>Tennis</asp:ListItem>
+                </asp:DropDownList>
+            </div>
+            <div class="form-group">
+                <asp:Label ID="LabelBuscarOrigen" CssClass="col-sm-2 control-label" runat="server" Text="Origen"></asp:Label>
+                <asp:textbox id="TextBoxBuscarOrigen" runat="server"></asp:textbox>
+                <asp:CheckBox ID="CheckBoxVisibleOrigen" runat="server" ToolTip="Si és invisible pels demés" />
+            </div>
+            <div class="form-group">
+                <asp:Label ID="LabelBuscarReligio" CssClass="col-sm-2 control-label" runat="server" Text="Religió"></asp:Label>
+                <asp:textbox id="TextBoxBuscarReligio" runat="server"></asp:textbox>
+                <asp:CheckBox ID="CheckBoxVisibleReligio" runat="server" ToolTip="Si és invisible pels demés" />
+            </div>
+            <div class="form-group">
+                <asp:Label ID="LabelBuscarCivil" CssClass="col-sm-2 control-label" runat="server" Text="Estat civil"></asp:Label>
+                <asp:DropDownList ID="DropdownlistBuscarCivil" runat="server">
+                    <asp:ListItem>-</asp:ListItem>
+                    <asp:ListItem>Solter/a</asp:ListItem>
+                </asp:DropDownList>
+            </div>
+            <div class="form-group">
+                <asp:Label ID="LabelBuscarFills" CssClass="col-sm-2 control-label" runat="server" Text="Que tingui fills?"></asp:Label>
+                <asp:RadioButton ID="RadiobuttonBuscarFillsSi" runat="server" GroupName="BuscoFills" Text="Si"></asp:RadioButton>
+                <asp:RadioButton ID="RadiobuttonBuscarFillsNo" runat="server" GroupName="BuscoFills" Text="No"></asp:RadioButton>
+            </div>
+            <div class="form-group">
+                <asp:Label ID="LabelFumador" CssClass="col-sm-2 control-label" runat="server" Text="Que sigui fumador?"></asp:Label>
+                <asp:RadioButton ID="RadiobuttonBuscoFumarSi" runat="server" GroupName="BuscoFumador" Text="Si"></asp:RadioButton>
+                <asp:RadioButton ID="RadiobuttonBuscoFumarNo" runat="server" GroupName="BuscoFumador" Text="No"></asp:RadioButton>
+            </div>
+            
+            <div class="form-group">
+                <asp:Label ID="LabelBuscarIV" CssClass="col-sm-2 control-label" runat="server" Text="Imperfeccions i virtuts"></asp:Label>
+                <asp:textbox id="TextBoxBuscarIV" runat="server"></asp:textbox>
+                <asp:button id="ButtonBuscarIV" runat="server" text="Afegir" CausesValidation="False" OnClick="ButtonBuscarIV_Click"/>
                 <asp:CheckBoxList ID="CheckboxlistBuscarIV" runat="server" CellPadding="1" CellSpacing="1" RepeatColumns="9" BorderStyle="Solid" BorderWidth="1px">
                     <asp:ListItem>Alegre</asp:ListItem>
                     <asp:ListItem>Enèrgic</asp:ListItem>
@@ -410,7 +458,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Inicia Sessió</h4>
+                        <h4 class="modal-title">Iniciar Sessió</h4>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">

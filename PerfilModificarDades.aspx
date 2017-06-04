@@ -36,7 +36,7 @@
                     <div class="col-md-4">
                         <div class="col-md-10">
                             <p>Color preferit: <asp:TextBox ID="TextBoxColor" runat="server"/></p>
-                            <p>Figura: <asp:TextBox ID="TextBoxFigura" runat="server"/></p>
+                            <p>Complexió: <asp:TextBox ID="TextBoxFigura" runat="server"/></p>
                             <p>Tipus de cabell: <asp:TextBox ID="TextBoxCabell" runat="server"/></p>
                             <p>Estat civil: <asp:TextBox ID="TextBoxCivil" runat="server"/></p>
                             <p>Fumador: <asp:TextBox ID="TextBoxFumador" runat="server"/></p>
