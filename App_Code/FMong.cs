@@ -17,6 +17,7 @@ public class FMong
     protected static IMongoClient _client;
     protected static IMongoDatabase _database;
     static Usuari user = new Usuari();
+    static Busca busca = new Busca();
 
     public FMong()
     {
@@ -40,24 +41,14 @@ public class FMong
     //    var collection = DB.GetCollection<BsonDocument>("store");
     //}
 
-    static public void preUpload(Usuari usuarioR, string tipo)
+    static public void preUpload(Usuari usuarioR, Busca buscaR)
     {
         user = usuarioR;
-
-        if (tipo == "Insert")
-        {
-            new Task(Insert).Start();
-        }
-
-        if (tipo == "Update")
-        {
-            new Task(Update).Start();
-        }
-
-
+        busca = buscaR;
+        new Task(Insert).Start();
     }
 
-    static public bool preUploadSelect(string correu, string pw)
+    static public bool preSelect(string correu, string pw)
     {
         bool comp = false;
         comp = SelectLogIn(correu, pw);
@@ -73,11 +64,27 @@ public class FMong
         var gustos = new BsonArray();
         string tast = UtilSignUp.formArray(user.tastes);
         string iv = UtilSignUp.formArray(user.iv);
-        string sports = UtilSignUp.formArray(user.sports);
+        string tastBus = UtilSignUp.formArray(busca.tastes);
+        string IvBus = UtilSignUp.formArray(busca.iv);
+        //string sports = UtilSignUp.formArray(user.sports);
 
         /*gustos.Add(new BsonDocument{  //Codi per a posar un array dintre del document
             {"tastes", tast}
         });*/
+        var buscaTipo = new BsonArray();
+        buscaTipo.Add(new BsonDocument
+            {
+               { "age", busca.edat},
+               { "civilstatus", busca.civilstatus},
+               { "colour", busca.colour},
+               { "children", busca.children},
+               { "sex_wanted", busca.sex},
+               { "shape", busca.shape},
+               { "sports", busca.sports},
+               { "tastes", tastBus},
+               { "Iv", IvBus},
+            });
+
         var document = new BsonDocument
             {
                 { "name",  user.name},
@@ -91,15 +98,18 @@ public class FMong
                 { "typeOfHair", user.typeOfHair },
                 { "shape", user.shape},
                 { "tastes", tast },
-                { "sports", sports },
+               // { "sports", sports },
                 //{ "birthplace", user.birthplace },
                 //{ "ubication", "blank" },
                 //{ "religion", user.religion },
                 { "civil status", user.civilstatus },
                 { "children", user.children },
                 { "iv", iv },
-            };
 
+                
+    };
+
+        document.Add("busca",buscaTipo);
         var collection = _database.GetCollection<BsonDocument>("Usuaris");
         await collection.InsertOneAsync(document);
     }

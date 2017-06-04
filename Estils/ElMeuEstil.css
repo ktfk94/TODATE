@@ -256,5 +256,10 @@ h3 {
     background-color: #ffb45f;
     border-color: #ffb45f;
 }
+#menu ul{
+    padding-bottom: 0px;
+    padding-top: 0px;
+    height: 85px;
+}
 
 /*#393E41*/
